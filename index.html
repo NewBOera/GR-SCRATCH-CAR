@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+      <!-- ! Tailwind config -->
+      <script src="https://cdn.tailwindcss.com"></script>
+      <script>
+         tailwind.config = {
+            theme: {
+               extend: {
+                  colors: {},
+                  fontFamily: {
+                     Montserrat: ["Montserrat", "sans-serif"],
+                  },
+               },
+            },
+         };
+      </script>
+      <script defer src="./scripts/main.js"></script>
+      <script defer src="./scripts/form-secure.js"></script>
+      <script defer src="./scripts/notify.js"></script>
+      <script defer src="./scripts/navbar.js"></script>
+      <script defer src="./scripts/dynamic-domain.js"></script>
+      <script defer src="./scripts/modals.js"></script>
+      <script defer src="scripts/form_logic.js"></script>
+      <script defer src="scripts/flag.js"></script>
+
+      <link rel="stylesheet" href="styles/notify.css" />
+      <link rel="stylesheet" href="styles/globals.css" />
+      <link rel="stylesheet" href="./styles/navbar.css" />
+      <link rel="stylesheet" href="styles/flag.css" />
+
+      <!-- ? Google Fonts -->
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+         href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+         rel="stylesheet"
+      />
+   </head>
+   <body>
+      <!-- ? navbar mobile -->
+      <section id="navbar-mobile" class="flex justify-center border-b-2">
+         <div
+            class="flex justify-center md:justify-evenly sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:[1280px] 2xl:w-[1300px]"
+         >
+            <div
+               class="w-[80%] md:w-full flex items-center p-5 lg:max-h-[100px]"
+            >
+               <img src="images/logo.png" class="md:max-w-[250px]" alt="" />
+            </div>
+
+            <div class="hidden md:w-full md:flex items-center w-[80%] p-5">
+               <p class="font-bold text-xl">
+                  Το Μυστικό Των Γερμανών Ήρθε Στην Ελλάδα!
+               </p>
+               <img
+                  src="images/3e0dd078ae2ff27e3e7584c638f3dbff.png"
+                  class="w-8 h-8"
+                  alt=""
+               />
+            </div>
+         </div>
+      </section>
+
+      <!-- ? Header section desktop-->
+
+      <main class="py-8 px-4">
+         <!-- ? Hero section -->
+         <section id="home-section" class="flex justify-center">
+            <div
+               class="flex gap-5 sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:[1280px] 2xl:w-[1300px] px-3"
+            >
+               <!-- ? parrafos/contenido -->
+               <div
+                  class="PARRAFOS flex flex-col gap-5 md:w-[70%] lg:[&>p]:text-xl"
+               >
+                  <h2 class="font-bold text-2xl md:text-[32px]">
+                     Η πατέντα πίσω από την αψ εγάδιαστη εμφάνιση των Γερμανικών
+                     αυτοκινήτων αποκαλύπτεται!
+                  </h2>
+
+                  <p class="lg:text-xl md:text-xl text-lg font-bold">
+                     Δεν πίστευα στα μάτια μου μόλις είδα τα αποτελέσματα στο
+                     ταλαιπωρημένο μου αυτοκίνητο...
+                  </p>
+
+                  <div class="flex items-center gap-2">
+                     <p class="hidden md:block text-sm lg:text-xl">
+                        ⭐⭐⭐⭐⭐
+                     </p>
+                     <p class="text-sm text-[#919BA3] font-bold">
+                        Διονύσης Σακόπουλος
+                     </p>
+                     <p class="text-sm text-[#919BA3] font-bold">15-07-2024</p>
+                  </div>
+
+                  <div>
+                     <img
+                        src="images/5c9ef32fbfab7afceca17e306eac408f.jpeg"
+                        alt=""
+                        class="w-full lg:max-h-[380px] object-cover"
+                     />
+                  </div>
+
+                  <p class="font-bold text-xl">
+                     Ζω και εργάζομαι στην Αθήνα. Το ξέρω ακούγεται από όλες τις
+                     απόψεις κακό αλλά θέλω να μιλήσω για ένα πρόβλημα
+                     συγκεκριμένα.
+                  </p>
+                  <p class="font-bold text-xl">
+                     Κάθε φορά που παρκάρω για να πάω στο γραφείο προσεύχομαι να
+                     μην μου πάρει κανείς παραμάζωμα τον προφυλακτήρα ή το
+                     φτερό. Δυστυχώς συμβαίνει πολύ συχνά…
+                  </p>
+                  <p class="font-bold text-xl">
+                     Εν τω μεταξύ κάνω και πολλά ταξίδια με το αυτοκίνητο. Έχω
+                     γυρίσει όλη την Ελλάδα και τη μισή Ευρώπη τα τελευταία δέκα
+                     χρόνια.
+                  </p>
+
+                  <p class="font-bold text-xl">
+                     Το αυτοκίνητό μου κουβαλάει “παράσημα” από κάθε περιπέτεια.
+                     Κάθε φορά που γυρίζω από ένα ταξίδι το πρώτο πράγμα που
+                     κάνω είναι να το πάω στο μάστορα.
+                  </p>
+                  <p class="font-bold text-xl">
+                     Οι γρατζουνιές και οι φθορές είναι άπειρες! Σε σημείο που
+                  </p>
+
+                  <p class="font-bold text-xl">
+                     Αυτά όμως ανήκουν στο παρελθόν… Το τελευταίο μου ταξίδι στη
+                     Γερμανία μου άνοιξε τα μάτια…
+                  </p>
+
+                  <div>
+                     <img
+                        src="images/b16753632733e00b87f44aa1fb11914d.jpeg"
+                        alt=""
+                        class="w-full lg:max-h-[380px] object-cover"
+                     />
+                  </div>
+
+                  <p class="font-bold text-xl">
+                     Οι Γερμανοί φημίζονται για δύο πράγματα: Την εξαιρετική
+                     οικονομία και τα αυτοκίνητά τους. 
+                  </p>
+                  <p class="font-bold text-xl">
+                     Από οικονομικά δεν σκαμπάζω πολλά, άρα δεν εκφέρω άποψη. Σε
+                     ότι έχει να κάνει όμως με αυτοκίνητα, όταν πήγα στο
+                     Βερολίνο έμεινα άφωνος!
+                  </p>
+                  <p class="font-bold text-xl">
+                     Και δεν μιλάω για τα καινούργια Mercedes και τα Audi που
+                     κατακλύζουν τους δρόμους. Μιλάω για κάθε λογής αυτοκίνητο,
+                     παλιό και καινούργιο.
+                  </p>
+                  <p class="font-bold text-xl">
+                     Πως στο καλό τα διατηρούν όλα σε τέλεια κατάσταση;
+                  </p>
+                  <p class="font-bold text-xl">
+                     Πραγματικά αν κάνει κανείς μια βόλτα σε μια γειτονιά με
+                     παρκαρισμένα αυτοκίνητα δεν θα δει ούτε μια γρατζουνιά.
+                  </p>
+                  <p class="font-bold text-xl">Σε κανένα!</p>
+
+                  <h2 class="title font-bold text-2xl md:text-[32px]">
+                     Αποφάσισα να το ψάξω. Κάποιο μυστικό θα υπάρχει!
+                  </h2>
+
+                  <div>
+                     <img
+                        src="images/720eb6ce671424168ca3d953fdad20cb.png"
+                        alt=""
+                        class="w-full lg:max-h-[380px] object-cover"
+                     />
+                  </div>
+                  <p class="font-bold text-xl">
+                     Εντάξει, είναι προσεκτικοί οδηγοί, όλοι το ξέρουν αυτό.
+                  </p>
+                  <p class="font-bold text-xl">
+                     Αλλά όχι και έτσι ρε παιδί μου. Δεν μπορεί να μην κάνουν
+                     μια μικρή γρατζουνιά κάπου στο φτερό ή στον πίσω
+                     προφυλακτήρα!
+                  </p>
+                  <p class="font-bold text-xl">
+                     Έτσι άρχισα να ρωτάω από εδώ και από εκεί αν βάζουν κάποιο
+                     ειδικό χρώμα ή κερί που τα προστατεύει από τις φθορές.
+                  </p>
+                  <p class="font-bold text-xl">
+                     Οι περισσότεροι ψιθύριζαν κάτι στα Γερμανικά αλλά δεν
+                     έβγαζα άκρη.
+                  </p>
+                  <p class="font-bold text-xl">
+                     Ευτυχώς 2-3 ανέφεραν μια μάρκα στα Αγγλικά!
+                  </p>
+
+                  <p class="font-bold text-xl">
+                     <span class="text-[#4089C3]">ScratchGuard Spray</span>  το
+                     είπαν.
+                  </p>
+
+                  <h2 class="title font-bold text-2xl md:text-[32px]">
+                     Αν το δοκίμασα; Εσείς θα μου πείτε!
+                  </h2>
+                  <div>
+                     <img
+                        src="images/26b13f5aea4566a31473855a7b1891d3.png"
+                        alt=""
+                        class="w-full lg:max-h-[380px] object-cover"
+                     />
+                  </div>
+
+                  <p class="font-bold text-xl">
+                     Προφανώς και μόλις έμαθα για το
+                     <span class="text-[#4089C3]">ScratchGuard Spray</span>  δεν
+                     μπορούσα να το  βγάλω από το μυαλό μου.
+                  </p>
+                  <p class="font-bold text-xl">
+                     Έτσι όταν γύρισα στην Ελλάδα, αμέσως το παράγγειλα. Δεν
+                     χρειάστηκε και πολύ να πειστώ να το πάρω.
+                  </p>
+                  <p class="font-bold text-xl">
+                     Πρώτα απ’ όλα είναι αρκετά φθηνό και δεύτερον πληρώνεις με
+                     αντικαταβολή
+                  </p>
+                  <p class="font-bold text-xl">
+                     – πράγμα που με βολεύει γιατί δεν εμπιστεύομαι τους
+                     ηλεκτρονικούς τρόπους πληρωμής.
+                  </p>
+                  <p class="font-bold text-xl">
+                     Τι είχα να χάσω; Σχεδόν τίποτα!
+                  </p>
+                  <p class="font-bold text-xl">
+                     Ε, μετά από δύο μέρες αναμονής ήρθε στην πόρτα μου… Τα
+                     υπόλοιπα είναι ιστορία!
+                  </p>
+                  <p class="font-bold text-xl">
+                     Μη με ρωτάτε αν δούλεψε! Δείτε την από πάνω φωτογραφία του
+                     αυτοκινήτου μου και θα καταλάβετε!
+                  </p>
+                  <div>
+                     <img
+                        src="images/97ab67c1637c269e79d354806e5f4e03.png"
+                        alt=""
+                        class="w-full lg:max-h-[380px] object-cover"
+                     />
+                  </div>
+                  <p class="font-bold text-xl">
+                     Και αυτό είναι το αυτοκίνητο της γυναίκας μου πριν και
+                     μετά!
+                  </p>
+                  <p class="font-bold text-xl">
+                     Τρίβεις λίγο την “πληγή” εφαρμόζεις το
+                     <span class="text-[#4089C3]">ScratchGuard Spray</span> και
+                     είσαι έτοιμος!
+                  </p>
+
+                  <p class="font-bold text-xl">
+                     Α! Μην ξεχάσω! Μέχρι και το κουμάσι ο φανοποιός μου το
+                     χρησιμοποιεί.
+                  </p>
+                  <p class="font-bold text-xl">
+                     Σε χρεώνουν 100 ευρώ την επίσκεψη λες και είναι γιατροί ενώ
+                     αυτοί δεν ξοδεύουν ούτε ευρώ για να σου φτιάξουν το αμάξι!
+                  </p>
+                  <h2 class="title font-bold text-2xl md:text-[32px]">
+                     Τι ακριβώς είναι το ScratchGuard Spray;
+                  </h2>
+                  <div>
+                     <img
+                        src="images/8e6f09661f998e097e03b1df061b8a28.png"
+                        alt=""
+                        class="w-full lg:max-h-[380px] object-cover"
+                     />
+                  </div>
+                  <div>
+                     <img
+                        src="images/daaa91c0554d1a21c794ed710c25b630.png"
+                        alt=""
+                        class="w-full lg:max-h-[380px] object-cover"
+                     />
+                  </div>
+                  <p class="font-bold text-xl">
+                     Δεν είμαι ειδικός στις παρουσιάσεις προϊόντων, πρώτη φορά
+                     το κάνω. Οπότε θα τα πω όσο πιο απλά γίνεται.
+                  </p>
+                  <p class="font-bold text-xl">
+                     Το
+                     <span class="text-[#4089C3]">ScratchGuard Spray</span>
+                     είναι ένα Γερμανικό υπερόπλο!
+                  </p>
+                  <p class="font-bold text-xl">
+                     Γιατί το προτιμούν οι Γερμανοί; Άκου να μαθαίνεις!
+                  </p>
+
+                  <p class="font-bold text-xl">✅ 100% αδιάβροχο</p>
+                  <p class="font-bold text-xl">
+                     ✅ Ανθεκτικό στη σκόνη και τον αέρα
+                  </p>
+                  <p class="font-bold text-xl">✅ Ένα πέρασμα αρκεί</p>
+                  <p class="font-bold text-xl">✅ Κρατάει χρόνια</p>
+                  <p class="font-bold text-xl">
+                     ✅ Κατάλληλο για όλους τους τύπους χρώματος
+                  </p>
+
+                  <p class="font-bold text-xl">
+                     Και το κερασάκι στην τούρτα είναι η ασυναγώνιστη τιμή του!
+                  </p>
+                  <div>
+                     <img
+                        src="images/d5095bdf0f2081a51d2c6f46d368e622.png"
+                        alt=""
+                        class="w-full lg:max-h-[380px] object-cover"
+                     />
+                  </div>
+                  <div>
+                     <img
+                        src="images/bb6bbb9a62620f040f66543b0af8bf13.png"
+                        alt=""
+                        class="w-full lg:max-h-[380px] object-cover"
+                     />
+                  </div>
+                  <h2 class="title font-bold text-2xl md:text-[32px]">
+                     Μα πώς τα καταφέρνουν;
+                  </h2>
+                  <p class="font-bold text-xl">
+                     Όπως σου είπα, σε ότι αφορά τα οικονομικά και τα
+                     αυτοκίνητα, οι Γερμανοί δεν πιάνονται.
+                  </p>
+                  <p class="font-bold text-xl">
+                     Το
+                     <span class="text-[#4089C3]">ScratchGuard Spray</span>
+                      περιλαμβάνει και τα δύο αυτά χαρακτηριστικά.
+                  </p>
+                  <p class="font-bold text-xl px-5">
+                     Είναι 100% αποτελεσματικό 
+                  </p>
+                  <p class="font-bold text-xl px-5">
+                     Είναι εξαιρετικά οικονομικό
+                  </p>
+
+                  <p class="font-bold text-xl">
+                     Θες να σου πω και για το τι θα γλιτώσεις σε επισκέψεις
+                     στους φανοποιούς;
+                  </p>
+                  <p class="font-bold text-xl">
+                     Εγώ το πήρα και σώθηκα. Το έκανα δώρο στον κουμπάρο μου και
+                     σε κανα δυο φιλαράκια και έχουν πάθει πλάκα όλοι.
+                  </p>
+                  <div>
+                     <img
+                        src="images/9866fb9da165f6e379552b72be16c4d8.png"
+                        alt=""
+                        class="w-full lg:max-h-[390px] object-cover"
+                     />
+                  </div>
+                  <h2 class="title font-bold md:text-[32px]">
+                     Καλύτερα να πάρεις 2,3 για να μην ξεμείνεις!
+                  </h2>
+                  <p class="font-bold text-xl">
+                     Δύο μέρες αφού το παράγγειλα ήρθε σπίτι μου
+                  </p>
+                  <p class="font-bold text-xl">
+                     Μετά από λίγο καιρό πήρα άλλα 3. Και αυτά ήρθαν μέσα σε δύο
+                     μέρες.
+                  </p>
+                  <p class="font-bold text-xl">
+                     Η εταιρεία είναι αρκετά γρήγορη, ευτυχώς.
+                  </p>
+                  <p class="font-bold text-xl">
+                     Επίσης άλλο σημαντικό είναι η αντικαταβολή. Δεν πληρώνω με
+                     κάρτα ποτέ! Το γεγονός ότι δέχονται πληρωμή με αντικαταβολή
+                     με έκανε να τους εμπιστευθώ απόλυτα
+                  </p>
+                  <p class="font-bold text-xl">
+                     Επίσης έχουν και 14 μέρες εγγύηση επιστροφής χρημάτων
+                  </p>
+                  <p class="font-bold text-xl">
+                     Δηλαδή το παίρνεις, το δοκιμάζεις στο όχημά σου, και αν δεν
+                     σου κάνει το γυρνάς πίσω.
+                  </p>
+                  <p class="font-bold text-xl">
+                     Τόσο σίγουροι είναι οι κατασκευαστές!
+                  </p>
+
+                  <p class="font-bold text-xl">
+                     Για να μην ψάχνεσαι από που να αγοράσεις το
+                  </p>
+                  <p class="font-bold text-xl">
+                     Το
+                     <span class="text-[#4089C3]">ScratchGuard Spray</span>
+                      πάτα το κουμπί πιο κάτω και ξέχνα τις γρατζουνιές!
+                  </p>
+                  <button
+                     class="font-bold text-base md:text-3xl lg:text-2xl text-white rounded-xl border-b-[5px] p-5 border-b-[#028332] shadow-xl bg-[#00C249]"
+                  >
+                     ΠΑΡΑΓΓΕΙΛΕ ΤΩΡΑ ΚΑΙ ΚΕΡΔΙΣΕ 50% ΕΚΠΤΩΣΗ
+                  </button>
+               </div>
+               <!-- ? ASIDE -->
+
+               <article
+                  class="md:w-[30%] md:flex flex-col items-center hidden p-4 gap-5 border-l-2"
+               >
+                  <div class="sticky top-4 flex flex-col items-center gap-5">
+                     <h2 class="font-bold text-lg text-center">
+                        Γερμανική Τελειότητα Σε Μια Απίστευτη Τιμή
+                     </h2>
+                     <div>
+                        <img
+                           src="images/d258551e28d6779e8b7e69d17bd70359.jpeg"
+                           alt=""
+                           class="w-full lg:max-h-[380px] object-cover"
+                        />
+                     </div>
+                     <button
+                        class="font-bold text-xl text-center w-full lg:text-2xl text-white rounded-xl border-b-[5px] p-5 border-b-[#028332] shadow-xl bg-[#00C249]"
+                     >
+                        50% 'Εκπτωση
+                     </button>
+                  </div>
+               </article>
+            </div>
+         </section>
+
+         <section id="home-section" class="flex justify-center hidden">
+            <div
+               class="flex flex-col items-center sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:[1280px] 2xl:w-[1400px]"
+            >
+               <div class="flex flex-col items-center text-center">
+                  <p class="text-xl font-bold">
+                     Το αμάξι σου ΔΕΝ χρειάζεται συνεργείο για όλες αυτές τις
+                     ατέλειες! Δες αυτό το προϊόν πριν ξοδέψεις έστω και ένα
+                     ευρώ!
+                  </p>
+                  <p class="text-xl font-bold">
+                     Πολλά προϊόντα υπόσχονται να φροντίσουν το αμάξι σας.
+                     Υπάρχει ΈΝΑ προϊόν που μπορεί να τα κάνει όλα! Το
+                     ScratchGuard Spray είναι στεγανωτικό χρώματος που δεν μένει
+                     στα βασικά. Αφαιρεί αμέσως γρατζουνιές, σημάδια από πέτρες,
+                     σκόνη, κηλίδες νερού, μέχρι και κουτσουλιές! Κάνε το
+                     αυτοκίνητο σου να λάμπει χωρίς να πληρώσεις τα μαλλιά της
+                     κεφαλής σου!
+                  </p>
+                  <img
+                     src="images/359ada095115682b4fe096d968a71a47.png"
+                     alt=""
+                  />
+
+                  <div>
+                     <div>
+                        <img src="" alt="" />
+                        <p class="text-xl font-bold">
+                           Μόνιμο αποτέλεσμα - είναι και αδιάβροχο!
+                        </p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+
+         <section id="home-section" class="flex justify-center">
+            <div
+               class="flex sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:[1280px] 2xl:w-[1400px]"
+            ></div>
+         </section>
+      </main>
+
+      <footer id="footer" class="flex justify-center bg-[#CCE0EB] px-4 py-10">
+         <div
+            class="flex flex-col gap-5 items-center sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:[1280px] 2xl:w-[1400px]"
+         >
+            <div
+               class="[&>a]:text-sm [&>a]:font-bold [&>a]:text-[#4089C3] flex flex-wrap gap-2 justify-center"
+            >
+               <a href=""> Πολιτική Απορρήτου</a>
+               <a href=""> Όροι και</a>
+               <a href="">Προϋποθέσεις</a>
+               <a href="">Ποιοι Είμαστε </a>
+               <a href="">Επικοινωνία</a>
+               <a href="">Impressum</a>
+            </div>
+
+            <p class="text-sm/[29px] font-bold text-center text-[#777777]">
+               ΑΥΤΗ ΕΙΝΑΙ ΜΙΑ ΔΙΑΦΗΜΙΣΗ ΚΑΙ ΟΧΙ ENA ΠΡΑΓΜΑΤΙΚΟ ΑΡΘΡΟ, BLOG Ή MIA
+               ΕΝΗΜΕΡΩΣΗ ΠΡΟΣΤΑΣΙΑΣ TOY ΚΑΤΑΝΑΛΩΤΗ ΠΕΡΙ ΠΡΟΩΘΗΣΗΣ ΑΓΑΘΩΝ: Αυτός
+               ο ιστότοπος είναι ένας χώρος αγοράς. Ως εκ τούτου, θα πρέπει να
+               γνωρίζετε ότι ο ιδιοκτήτης έχει χρηματική σύνδεση με το προϊόν
+               και τις υπηρεσίες που διαφημίζονται στον ιστότοπο. Ο ιδιοκτήτης
+               λαμβάνει πληρωμή κάθε φορά που αναφέρεται ένας αναγνωρισμένος
+               υποψήφιος πελάτης, αλλά έως εκεί. Ενημερωθείτε εκτενέστερα στη
+               σελίδα μας  <span class="text-[#4089C3]">ΠΕΡΙ ΔΙΑΦΗΜΙΣΗΣ</span>.
+               Δεν είμαστε υπεύθυνοι για τις επιστροφές προϊόντων, την
+               υποστήριξη που σχετίζεται με το προϊόν και την αποστολή
+               προϊόντων. Εάν δεν είστε απόλυτα ευχαριστημένοι με τα αγαθά που
+               λάβατε, επικοινωνήστε απευθείας με τον πάροχο των αγαθών.
+               Μπορείτε να βρείτε περισσότερες πληροφορίες σχετικά με τους
+               παρόχους των προϊόντων μέσω της σελίδας Πολιτικής Απορρήτου ή στη
+               σελίδα Επικοινωνίας μας. Χρησιμοποιώντας τον ιστότοπό μας,
+               κατανοείτε και συμφωνείτε ότι είστε αποκλειστικά υπεύθυνοι για τη
+               λήψη των δικών σας αξιολογήσεων, αποφάσεων και εκτιμήσεων σχετικά
+               με το εάν θα εμπλακείτε σε οποιαδήποτε υπηρεσία που παρέχεται.
+               Όλες οι δηλώσεις και οι εγγυήσεις σχετικά με τις πληροφορίες που
+               παρουσιάζονται σε αυτή τη σελίδα αποποιούνται. Οι πληροφορίες,
+               συμπεριλαμβανομένων των τιμών, που εμφανίζονται σε αυτόν τον
+               ιστότοπο, υπόκεινται σε αλλαγές ανά πάσα στιγμή. ΠΕΡΙ ΔΙΑΦΗΜΙΣΗΣ:
+               Αυτός ο ιστότοπος, τα προϊόντα και οι υπηρεσίες που αναφέρονται
+               σε αυτόν είναι χώροι διαφήμισης. Αυτή η ιστοσελίδα είναι μια
+               διαφήμιση και όχι μια σελίδα δημοσίευσης ειδήσεων. Τυχόν
+               φωτογραφίες προσώπων που χρησιμοποιούνται σε αυτόν τον ιστότοπο
+               είναι μοντέλα. Όλα τα ονόματα προϊόντων, τα λογότυπα και οι
+               επωνυμίες αποτελούν πνευματική ιδιοκτησία των αντίστοιχων κατόχων
+               τους. Όλα τα ονόματα εταιρειών, προϊόντων και υπηρεσιών που
+               χρησιμοποιούνται σε αυτόν τον ιστότοπο προορίζονται μόνο για
+               σκοπούς αναγνώρισης. Η χρήση αυτών των ονομάτων, λογοτύπων και
+               εμπορικών σημάτων δεν συνεπάγεται έγκριση. Ο ιδιοκτήτης αυτού του
+               ιστότοπου και των προϊόντων και υπηρεσιών που αναφέρονται σε
+               αυτόν παρέχει μόνο μία υπηρεσία που οι καταναλωτές μπορούν να
+               αποκτήσουν και να συγκρίνουν. Ο ιστότοπός μας μπορεί να περιέχει
+               υπερσυνδέσμους. Εάν κάνετε κλικ σε αυτόν τον υπερσύνδεσμο, θα
+               εγκαταλείψετε τον ιστότοπό μας και θα μεταβείτε στην ιστοσελίδα
+               μιας άλλης εταιρείας. Σε αυτό το σημείο, ο ιστότοπός μας δεν έχει
+               καμία επιρροή στις υπηρεσίες που προσφέρονται από τον εν λόγω
+               ιστότοπο ή στις μεθόδους της σελίδας αυτής. Αυτοί οι ιστότοποι
+               έχουν τη δική τους πολιτική απορρήτου που είναι εντελώς ξεχωριστή
+               από τη δική μας. Η πολιτική απορρήτου μας αναφέρεται μόνο σε
+               δεδομένα που υποβάλλονται σε επεξεργασία από αυτόν τον ιστότοπο.
+               Ως εκ τούτου, αυτός ο ιστότοπος δεν αποδέχεται καμία ευθύνη ή
+               υποχρέωση για υπηρεσίες ή/και ιστότοπους τρίτων ή τις μεθόδους
+               και/ή το περιεχόμενό τους.
+            </p>
+         </div>
+      </footer>
+
+      <!-- ! Modals -->
+      <!-- ? Terms and Conditions Modal -->
+      <section
+         id="terms-modal"
+         class="bg-[#00000088] font-[Inter] flex items-center justify-center min-h-screen absolute z-50 hidden"
+      >
+         <div
+            class="fixed inset-0 w-full bg-[#00000088] flex items-center justify-center max-h-screen"
+         >
+            <div
+               class="bg-white shadow-lg w-11/12 sm:w-8/12 lg:max-w-[600px] h-auto max-h-54 rounded-md"
+            >
+               <div class="relative flex items-end">
+                  <img
+                     class="hover:cursor-pointer absolute top-0 right-0 w-7 m-4 rounded-xs"
+                     onclick="clickModal('terms-modal')"
+                     src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSIjRUZFRkVGIiBkPSJNMTkgM0g1YTIgMiAwIDAgMC0yIDJ2MTRhMiAyIDAgMCAwIDIgMmgxNGEyIDIgMCAwIDAgMi0yVjVhMiAyIDAgMCAwLTItMm0tMy40IDE0TDEyIDEzLjRMOC40IDE3TDcgMTUuNmwzLjYtMy42TDcgOC40TDguNCA3bDMuNiAzLjZMMTUuNiA3TDE3IDguNEwxMy40IDEybDMuNiAzLjZ6Ii8+PC9zdmc+"
+                     alt=""
+                  />
+                  <div class="bg-primarybg w-full">
+                     <h2
+                        class="text-base text-center p-4 font-bold text-white w-full"
+                     >
+                        Terms and Conditions
+                     </h2>
+                  </div>
+               </div>
+
+               <article
+                  class="overflow-y-auto overflow-x-hidden h-96 p-5 text-xs flex flex-col gap-4"
+               >
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
+                  natus, maiores numquam dicta, at unde sunt est adipisci,
+                  nesciunt praesentium quam. Sint similique quidem at, earum
+                  reiciendis omnis doloremque explicabo. Lorem ipsum, dolor sit
+                  amet consectetur adipisicing elit. Expedita, porro perferendis
+                  quos quam corrupti hic debitis sunt ullam, illo incidunt iste
+                  obcaecati harum nisi omnis et quaerat fugit tempore
+                  praesentium! Lorem ipsum dolor sit amet consectetur
+                  adipisicing elit. Magnam amet corrupti nisi sed. Ea maxime
+                  dolor consectetur quam esse quae natus quod error, dolorum
+                  voluptate nam excepturi eveniet. Repudiandae, quia. Lorem
+                  ipsum dolor sit amet consectetur adipisicing elit. Autem
+                  natus, maiores numquam dicta, at unde sunt est adipisci,
+                  nesciunt praesentium quam. Sint similique quidem at, earum
+                  reiciendis omnis doloremque explicabo. Lorem ipsum, dolor sit
+                  amet consectetur adipisicing elit. Expedita, porro perferendis
+                  quos quam corrupti hic debitis sunt ullam, illo incidunt iste
+                  obcaecati harum nisi omnis et quaerat fugit tempore
+                  praesentium! Lorem ipsum dolor sit amet consectetur
+                  adipisicing elit. Magnam amet corrupti nisi sed. Ea maxime
+                  dolor consectetur quam esse quae natus quod error, dolorum
+                  voluptate nam excepturi eveniet. Repudiandae, quia. Lorem
+                  ipsum dolor sit amet consectetur adipisicing elit. Autem
+                  natus, maiores numquam dicta, at unde sunt est adipisci,
+                  nesciunt praesentium quam. Sint similique quidem at, earum
+                  reiciendis omnis doloremque explicabo. Lorem ipsum, dolor sit
+                  amet consectetur adipisicing elit. Expedita, porro perferendis
+                  quos quam corrupti hic debitis sunt ullam, illo incidunt iste
+                  obcaecati harum nisi omnis et quaerat fugit tempore
+                  praesentium! Lorem ipsum dolor sit amet consectetur
+                  adipisicing elit. Magnam amet corrupti nisi sed. Ea maxime
+                  dolor consectetur quam esse quae natus quod error, dolorum
+                  voluptate nam excepturi eveniet. Repudiandae, quia. Lorem
+                  ipsum dolor sit amet consectetur adipisicing elit. Autem
+                  natus, maiores numquam dicta, at unde sunt est adipisci,
+                  nesciunt praesentium quam. Sint similique quidem at, earum
+                  reiciendis omnis doloremque explicabo. Lorem ipsum, dolor sit
+                  amet consectetur adipisicing elit. Expedita, porro perferendis
+                  quos quam corrupti hic debitis sunt ullam, illo incidunt iste
+                  obcaecati harum nisi omnis et quaerat fugit tempore
+                  praesentium! Lorem ipsum dolor sit amet consectetur
+                  adipisicing elit. Magnam amet corrupti nisi sed. Ea maxime
+                  dolor consectetur quam esse quae natus quod error, dolorum
+                  voluptate nam excepturi eveniet. Repudiandae, quia. Lorem
+                  ipsum dolor sit amet consectetur adipisicing elit. Autem
+                  natus, maiores numquam dicta, at unde sunt est adipisci,
+                  nesciunt praesentium quam. Sint similique quidem at, earum
+                  reiciendis omnis doloremque explicabo. Lorem ipsum, dolor sit
+                  amet consectetur adipisicing elit. Expedita, porro perferendis
+                  quos quam corrupti hic debitis sunt ullam, illo incidunt iste
+                  obcaecati harum nisi omnis et quaerat fugit tempore
+                  praesentium! Lorem ipsum dolor sit amet consectetur
+                  adipisicing elit. Magnam amet corrupti nisi sed. Ea maxime
+                  dolor consectetur quam esse quae natus quod error, dolorum
+                  voluptate nam excepturi eveniet. Repudiandae, quia. Lorem
+                  ipsum dolor sit amet consectetur adipisicing elit. Autem
+                  natus, maiores numquam dicta, at unde sunt est adipisci,
+                  nesciunt praesentium quam. Sint similique quidem at, earum
+                  reiciendis omnis doloremque explicabo. Lorem ipsum, dolor sit
+                  amet consectetur adipisicing elit. Expedita, porro perferendis
+                  quos quam corrupti hic debitis sunt ullam, illo incidunt iste
+                  obcaecati harum nisi omnis et quaerat fugit tempore
+                  praesentium! Lorem ipsum dolor sit amet consectetur
+                  adipisicing elit. Magnam amet corrupti nisi sed. Ea maxime
+                  dolor consectetur quam esse quae natus quod error, dolorum
+                  voluptate nam excepturi eveniet. Repudiandae, quia.
+               </article>
+            </div>
+         </div>
+      </section>
+
+      <!-- ? Privacy Policy Modal -->
+      <section
+         id="privacy-modal"
+         class="bg-[#00000088] font-[Inter] flex items-center justify-center min-h-screen absolute z-50 hidden"
+      >
+         <div
+            class="fixed inset-0 w-full bg-[#00000088] flex items-center justify-center max-h-screen"
+         >
+            <div
+               class="bg-white shadow-lg w-11/12 sm:w-8/12 lg:max-w-[600px] h-auto max-h-54 rounded-md"
+            >
+               <div class="relative flex items-end">
+                  <img
+                     class="hover:cursor-pointer absolute top-0 right-0 w-7 m-4 rounded-xs"
+                     onclick="clickModal('privacy-modal')"
+                     src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSIjRUZFRkVGIiBkPSJNMTkgM0g1YTIgMiAwIDAgMC0yIDJ2MTRhMiAyIDAgMCAwIDIgMmgxNGEyIDIgMCAwIDAgMi0yVjVhMiAyIDAgMCAwLTItMm0tMy40IDE0TDEyIDEzLjRMOC40IDE3TDcgMTUuNmwzLjYtMy42TDcgOC40TDguNCA3bDMuNiAzLjZMMTUuNiA3TDE3IDguNEwxMy40IDEybDMuNiAzLjZ6Ii8+PC9zdmc+"
+                     alt=""
+                  />
+                  <div class="bg-primarybg w-full">
+                     <h2
+                        class="text-base text-center p-4 font-bold text-white w-full"
+                     >
+                        Privacy Policy
+                     </h2>
+                  </div>
+               </div>
+
+               <article
+                  class="overflow-y-auto overflow-x-hidden h-96 p-5 text-xs flex flex-col gap-4"
+               ></article>
+            </div>
+         </div>
+      </section>
+
+      <!-- ? Cookies Modal -->
+      <section
+         id="cookies-modal"
+         class="bg-[#00000088] font-[Inter] flex items-center justify-center min-h-screen absolute z-50 hidden"
+      >
+         <div
+            class="fixed inset-0 w-full bg-[#00000088] flex items-center justify-center max-h-screen"
+         >
+            <div
+               class="bg-white shadow-lg w-11/12 sm:w-8/12 lg:max-w-[600px] h-auto max-h-54 rounded-md"
+            >
+               <div class="relative flex items-end">
+                  <img
+                     class="hover:cursor-pointer absolute top-0 right-0 w-7 m-4 rounded-xs"
+                     onclick="clickModal('cookies-modal')"
+                     src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSIjRUZFRkVGIiBkPSJNMTkgM0g1YTIgMiAwIDAgMC0yIDJ2MTRhMiAyIDAgMCAwIDIgMmgxNGEyIDIgMCAwIDAgMi0yVjVhMiAyIDAgMCAwLTItMm0tMy40IDE0TDEyIDEzLjRMOC40IDE3TDcgMTUuNmwzLjYtMy42TDcgOC40TDguNCA3bDMuNiAzLjZMMTUuNiA3TDE3IDguNEwxMy40IDEybDMuNiAzLjZ6Ii8+PC9zdmc+"
+                     alt=""
+                  />
+                  <div class="bg-primarybg w-full">
+                     <h2
+                        class="text-base text-center p-4 font-bold text-white w-full"
+                     >
+                        Cookie Policy
+                     </h2>
+                  </div>
+               </div>
+
+               <article
+                  class="overflow-y-auto overflow-x-hidden h-96 p-5 text-xs flex flex-col gap-4"
+               ></article>
+            </div>
+         </div>
+      </section>
+
+      <!-- ? Contact Modal -->
+      <section
+         id="contact-modal"
+         class="bg-[#00000088] font-[Inter] flex items-center justify-center min-h-screen absolute z-50 hidden"
+      >
+         <div
+            class="fixed inset-0 w-full bg-[#00000088] flex items-center justify-center max-h-screen"
+         >
+            <div
+               class="bg-white shadow-lg w-11/12 sm:w-8/12 lg:max-w-[600px] h-auto max-h-54 rounded-md"
+            >
+               <div class="relative flex items-end">
+                  <img
+                     class="hover:cursor-pointer absolute top-0 right-0 w-7 m-4 rounded-xs"
+                     onclick="clickModal('contact-modal')"
+                     src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSIjRUZFRkVGIiBkPSJNMTkgM0g1YTIgMiAwIDAgMC0yIDJ2MTRhMiAyIDAgMCAwIDIgMmgxNGEyIDIgMCAwIDAgMi0yVjVhMiAyIDAgMCAwLTItMm0tMy40IDE0TDEyIDEzLjRMOC40IDE3TDcgMTUuNmwzLjYtMy42TDcgOC40TDguNCA3bDMuNiAzLjZMMTUuNiA3TDE3IDguNEwxMy40IDEybDMuNiAzLjZ6Ii8+PC9zdmc+"
+                     alt=""
+                  />
+                  <div class="bg-primarybg w-full">
+                     <h2
+                        class="text-base text-center p-4 font-bold text-white w-full"
+                     >
+                        Contact
+                     </h2>
+                  </div>
+               </div>
+
+               <article
+                  class="overflow-y-auto overflow-x-hidden h-96 p-5 text-xs flex flex-col gap-4"
+               ></article>
+            </div>
+         </div>
+      </section>
+   </body>
+</html>
