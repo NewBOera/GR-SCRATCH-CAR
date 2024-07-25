@@ -26,11 +26,14 @@
       <script defer src="./scripts/modals.js"></script>
       <script defer src="scripts/form_logic.js"></script>
       <script defer src="scripts/flag.js"></script>
+      <script defer src="scripts/faq.js"></script>
+      <script defer src="scripts/navigation.js"></script>
 
       <link rel="stylesheet" href="styles/notify.css" />
       <link rel="stylesheet" href="styles/globals.css" />
       <link rel="stylesheet" href="./styles/navbar.css" />
       <link rel="stylesheet" href="styles/flag.css" />
+      <link rel="stylesheet" href="styles/faq.css" />
 
       <!-- ? Google Fonts -->
       <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -67,9 +70,9 @@
 
       <!-- ? Header section desktop-->
 
-      <main class="py-8 px-4">
+      <main class="py-8">
          <!-- ? Hero section -->
-         <section id="home-section" class="flex justify-center">
+         <section id="home" class="flex justify-center tab-content">
             <div
                class="flex gap-5 sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:[1280px] 2xl:w-[1300px] px-3"
             >
@@ -395,6 +398,7 @@
                       πάτα το κουμπί πιο κάτω και ξέχνα τις γρατζουνιές!
                   </p>
                   <button
+                     onclick="openTab(event, 'second-home')"
                      class="font-bold text-base md:text-3xl lg:text-2xl text-white rounded-xl border-b-[5px] p-5 border-b-[#028332] shadow-xl bg-[#00C249]"
                   >
                      ΠΑΡΑΓΓΕΙΛΕ ΤΩΡΑ ΚΑΙ ΚΕΡΔΙΣΕ 50% ΕΚΠΤΩΣΗ
@@ -417,6 +421,7 @@
                         />
                      </div>
                      <button
+                        onclick="openTab(event, 'second-home')"
                         class="font-bold text-xl text-center w-full lg:text-2xl text-white rounded-xl border-b-[5px] p-5 border-b-[#028332] shadow-xl bg-[#00C249]"
                      >
                         50% 'Εκπτωση
@@ -426,49 +431,982 @@
             </div>
          </section>
 
-         <section id="home-section" class="flex justify-center hidden">
-            <div
-               class="flex flex-col items-center sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:[1280px] 2xl:w-[1400px]"
-            >
-               <div class="flex flex-col items-center text-center">
-                  <p class="text-xl font-bold">
-                     Το αμάξι σου ΔΕΝ χρειάζεται συνεργείο για όλες αυτές τις
-                     ατέλειες! Δες αυτό το προϊόν πριν ξοδέψεις έστω και ένα
-                     ευρώ!
-                  </p>
-                  <p class="text-xl font-bold">
-                     Πολλά προϊόντα υπόσχονται να φροντίσουν το αμάξι σας.
-                     Υπάρχει ΈΝΑ προϊόν που μπορεί να τα κάνει όλα! Το
-                     ScratchGuard Spray είναι στεγανωτικό χρώματος που δεν μένει
-                     στα βασικά. Αφαιρεί αμέσως γρατζουνιές, σημάδια από πέτρες,
-                     σκόνη, κηλίδες νερού, μέχρι και κουτσουλιές! Κάνε το
-                     αυτοκίνητο σου να λάμπει χωρίς να πληρώσεις τα μαλλιά της
-                     κεφαλής σου!
-                  </p>
-                  <img
-                     src="images/359ada095115682b4fe096d968a71a47.png"
-                     alt=""
-                  />
+         <!--TODO HERO PAGE 2 section -->
 
-                  <div>
-                     <div>
-                        <img src="" alt="" />
-                        <p class="text-xl font-bold">
-                           Μόνιμο αποτέλεσμα - είναι και αδιάβροχο!
+         <section id="second-home" class="hidden tab-content">
+            <article
+               id="home-section"
+               class="flex justify-center bg-[#F5F7F8] py-10"
+            >
+               <div
+                  class="flex flex-col gap-5 lg:gap-10 p-5 items-center sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:[1280px] 2xl:w-[1300px]"
+               >
+                  <div class="flex lg:flex-row gap-5 flex-col items-center">
+                     <div
+                        class="flex flex-col gap-5 items-center text-center [&>p]:text-lg lg:w-[50%]"
+                     >
+                        <h2 class="text-xl md:text-4xl lg:text-left font-bold">
+                           Το αμάξι σου ΔΕΝ χρειάζεται συνεργείο για όλες αυτές
+                           τις ατέλειες! Δες αυτό το προϊόν πριν ξοδέψεις έστω
+                           και ένα ευρώ!
+                        </h2>
+                        <p class="text-xl font-bold lg:text-left">
+                           Πολλά προϊόντα υπόσχονται να φροντίσουν το αμάξι σας.
+                           Υπάρχει ΈΝΑ προϊόν που μπορεί να τα κάνει όλα! Το
+                           ScratchGuard Spray είναι στεγανωτικό χρώματος που δεν
+                           μένει στα βασικά. Αφαιρεί αμέσως γρατζουνιές, σημάδια
+                           από πέτρες, σκόνη, κηλίδες νερού, μέχρι και
+                           κουτσουλιές! Κάνε το αυτοκίνητο σου να λάμπει χωρίς
+                           να πληρώσεις τα μαλλιά της κεφαλής σου!
                         </p>
+                        <img
+                           src="images/359ada095115682b4fe096d968a71a47.png"
+                           alt=""
+                           class="rounded-xl lg:hidden md:max-w-[500px] md:max-h-[500px]"
+                        />
+
+                        <div
+                           class="flex flex-col items-center md:items-start gap-3 text-left px-5 md:[&>div>p]:text-lg"
+                        >
+                           <div class="flex gap-3 items-center">
+                              <img
+                                 src="images/Symbol.png"
+                                 class="w-[35px]"
+                                 alt=""
+                              />
+                              <p class="text-xl font-bold">
+                                 Μόνιμο αποτέλεσμα - είναι και αδιάβροχο!
+                              </p>
+                           </div>
+                           <div class="flex gap-3 items-center">
+                              <img
+                                 src="images/Symbol.png"
+                                 class="w-[35px]"
+                                 alt=""
+                              />
+                              <p class="text-xl font-bold">
+                                 Ιδανικό για όλα τα αυτοκίνητα - για να σου
+                                 μείνει αν αλλάξεις αμάξι!
+                              </p>
+                           </div>
+                           <div class="flex gap-3 items-center">
+                              <img
+                                 src="images/Symbol.png"
+                                 class="w-[35px]"
+                                 alt=""
+                              />
+                              <p class="text-xl font-bold">
+                                 Προστασία από τη διάβρωση, για να μην αγχώνεσαι
+                                 όσο περνάει ο καιρός!
+                              </p>
+                           </div>
+                           <a
+                              href="#send-form"
+                              class="font-bold text-center text-base md:w-[80%] md:p-3 md:text-xl lg:text-xl lg:w-full text-white rounded-xl border-b-[5px] p-5 border-b-[#a75900] shadow-xl bg-[#FF8425]"
+                           >
+                              ΠΑΡΑΓΓΕΙΛΕ ΤΩΡΑ & ΚΕΡΔΙΣΕ 50% ΕΚΠΤΩΣΗ
+                           </a>
+                        </div>
+                     </div>
+
+                     <div class="lg:w-[50%]">
+                        <div class="flex justify-center">
+                           <img
+                              src="images/359ada095115682b4fe096d968a71a47.png"
+                              alt=""
+                              class="rounded-xl hidden lg:block md:max-w-[500px] md:max-h-[500px]"
+                           />
+                        </div>
                      </div>
                   </div>
                </div>
-            </div>
-         </section>
+            </article>
 
-         <section id="home-section" class="flex justify-center">
-            <div
-               class="flex sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:[1280px] 2xl:w-[1400px]"
-            ></div>
+            <article id="cards-section" class="flex justify-center py-10 p-5">
+               <div
+                  class="flex justify-center sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:[1280px] 2xl:w-[1400px]"
+               >
+                  <div class="flex flex-col gap-8 items-center">
+                     <h2
+                        class="title font-bold text-2xl text-center md:text-[32px]"
+                     >
+                        Τα αποτελέσματα μιλάνε από μόνα τους!
+                     </h2>
+
+                     <div class="bg-red-50 w-full min-h-[350px]">
+                        <iframe
+                           class="w-full h-full"
+                           src="https://www.youtube.com/embed/lzUTKJz7Q0o?si=OecoCvSlvw-ffP3S"
+                           title="YouTube video player"
+                           frameborder="0"
+                           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                           referrerpolicy="strict-origin-when-cross-origin"
+                           allowfullscreen
+                        ></iframe>
+                     </div>
+
+                     <h2
+                        class="title font-bold text-2xl text-center md:text-[32px]"
+                     >
+                        Γιατί να αγοράσεις το ScratchGuard Spray;
+                     </h2>
+
+                     <!-- ? CARDS -->
+                     <article
+                        class="flex flex-col md:flex-row md:[&>div]:w-[33%] md:[&>div]:h-[620px] lg:[&>div]:h-[5 00px] items-center gap-5 2xl:[&>div]:w-[350px] [&>div]:py-12"
+                     >
+                        <!-- ? card -->
+                        <div
+                           class="flex flex-col items-center border p-4 text-center rounded-xl gap-5 min-h-[500px] shadow-lg"
+                        >
+                           <img src="images/c1g.webp" alt="" />
+                           <p class="text-2xl font-bold w-[80%]">
+                              Αφαιρεί τις γρατζουνιές και τα σημάδια καθώς και
+                              τους λεκκέδες
+                           </p>
+                        </div>
+                        <!-- ? card -->
+                        <div
+                           class="flex flex-col items-center border text-center rounded-xl gap-5 min-h-[450px] shadow-lg p-5"
+                        >
+                           <img src="images/c2g.webp" alt="" />
+                           <p class="text-2xl font-bold w-[80%]">
+                              Δίνει λάμψη στο αμάξι σου για να μοιάζει σαν
+                              καινούριο που διαρκεί για τουλάχιστον 3 μήνες
+                           </p>
+                        </div>
+                        <!-- ? card -->
+                        <div
+                           class="flex flex-col items-center border p-4 text-center rounded-xl gap-5 min-h-[550px] shadow-lg"
+                        >
+                           <img src="images/c3.png" alt="" />
+                           <p class="text-2xl font-bold w-[80%]">
+                              Κατάλληλο για διάφορες επιφάνειες, όπως τροχούς,
+                              χρώμιο, βαφή, μέταλλο, πλαστικό, καουτσούκ, δέρμα
+                              και μοκέτα
+                           </p>
+                        </div>
+                     </article>
+                  </div>
+               </div>
+            </article>
+
+            <article
+               id="kave-section"
+               class="flex justify-center bg-[#F5F7F8] py-10 p-5"
+            >
+               <div
+                  class="flex sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:[1280px] 2xl:w-[1400px]"
+               >
+                  <article class="flex flex-col items-center gap-8">
+                     <h2
+                        class="title font-bold text-2xl text-center md:text-[32px]"
+                     >
+                        ScratchGuard Spray: Κάνε το αμάξι σου να τραβήξει κάθε
+                        βλέμμα!
+                     </h2>
+                     <div
+                        class="flex flex-col gap-5 lg:flex-row items-center text-center"
+                     >
+                        <div
+                           class="flex flex-col items-center lg:w-[50%] gap-5"
+                        >
+                           <p class="text-xl/[30px] font-bold">
+                              Είτε είσαι νέος οδηγός, είτε είσαι ο πιο έμπειρος,
+                              οι ατέλειες είναι κάτι που δεν μπορείς να
+                              αποφύγεις. Δεν είναι κρίμα να νιώθεις άβολα  κάθε
+                              φορά που σε βλέπουν να οδηγείς ένα ταλαιπωρημένο
+                              αμάξι; Φυσικά και είναι! Μα είναι ακόμα χειρότερο
+                              να θες να διορθώσεις την κατάστα ση και να ξέρεις
+                              ότι θα σου κοστίσει ο κούκος αηδόνι Γιατί να
+                              βρίσκεσαι σε ένα τέτοιο δίλημμα όταν υπάρχει λύση
+                              που κοστίζει ελάχιστα και είναι πανεύκολη
+                           </p>
+                           <p class="text-xl font-bold">
+                              Το σπρέι ScratchGuard Spray όχι μόνο αφαιρεί τις
+                              γρατζουνιές και τα σημάδια που μπορεί να προκύψουν
+                              από αντικείμενα όπως πετραδάκια, αλλά κάνει ακόμα
+                              περισσότερα. Με την προηγμένη τεχνολογία του
+                              εφαρμόζει μια εξαιρετικά υδρόφοβη επίστρωση που
+                              βοηθά στη μείωση των λεκκέδων από το νερό και τις
+                              καιρικές συνθήκες, καθώς και τη συσσώρευση βρωμιάς
+                              και σκουπιδιών. Κάνε το αμάξι σου να μοιάζει
+                              έτοιμο να μπει σε βιτρίνα!
+                           </p>
+                        </div>
+
+                        <div class="flex justify-center lg:w-[50%]">
+                           <img
+                              src="images/perf.png"
+                              class="rounded-xl md:max-w-[500px] md:max-h-[500px]"
+                              alt=""
+                           />
+                        </div>
+                     </div>
+                     <div class="flex flex-col items-center gap-5">
+                        <div
+                           class="flex flex-col lg:flex-row lg:flex-wrap lg:gap-10 gap-3 text-left px-5"
+                        >
+                           <div class="flex gap-3 lg:w-[45%] items-center">
+                              <img
+                                 src="images/checks.png"
+                                 class="w-[35px]"
+                                 alt=""
+                              />
+                              <p class="text-xl font-bold">
+                                 Γυαλιστερό φινίρισμα χωρίς κερί ή ζημιά στο
+                                 χρώμα
+                              </p>
+                           </div>
+                           <div class="flex gap-3 lg:w-[45%] items-center">
+                              <img
+                                 src="images/checks.png"
+                                 class="w-[35px]"
+                                 alt=""
+                              />
+                              <p class="text-xl font-bold">
+                                 Δεν περιέχει επιβλαβείς χημικές ουσίες - 100%
+                                 ασφαλές
+                              </p>
+                           </div>
+                           <div class="flex gap-3 lg:w-[45%] items-center">
+                              <img
+                                 src="images/checks.png"
+                                 class="w-[35px]"
+                                 alt=""
+                              />
+                              <p class="text-xl font-bold">
+                                 Κάνει το καθάρισμα του αυτοκινήτου πανεύκολο
+                              </p>
+                           </div>
+                           <div class="flex gap-3 lg:w-[45%] items-center">
+                              <img
+                                 src="images/checks.png"
+                                 class="w-[35px]"
+                                 alt=""
+                              />
+                              <p class="text-xl font-bold">
+                                 Προστατευτική κεραμική επίστρωση 9Η που
+                                 αποτρέπει περαιτέρω ζημιά
+                              </p>
+                           </div>
+                        </div>
+                     </div>
+                  </article>
+               </div>
+            </article>
+
+            <article id="cards-section" class="flex justify-center py-10 p-5">
+               <div
+                  class="flex sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:[1280px] 2xl:w-[1400px]"
+               >
+                  <div class="flex flex-col gap-10 items-center">
+                     <div class="flex flex-col items-center text-center gap-8">
+                        <h2 class="title font-bold text-2xl md:text-[32px]">
+                           Κάνε το αυτοκίνητο σου να μοιάζει σαν να το αγόρασες
+                           χθες!
+                        </h2>
+                        <p class="text-lg font-bold">
+                           Τα αποθέματα σύντομα θα εξαντληθούν! Ήδη χιλιάδες
+                           άνθρωποι στη χώρα έχουν απαλλαγεί από τις
+                           εκνευριστικές γρατζουνιές. Αν θες να είσαι ένας από
+                           αυτούς, τώρα είναι η κατάλληλη στιγμή για να
+                           προλάβεις την προσφορά!
+                        </p>
+                        <a
+                           href="#send-form"
+                           class="font-bold text-center text-base md:text-3xl lg:text-2xl text-white rounded-xl border-b-[5px] p-5 border-b-[#a75900] shadow-xl bg-[#FF8425]"
+                        >
+                           ΚΑΝΕ ΔΙΚΗ ΣΟΥ ΤΗΝ ΑΠΟΚΛΕΙΣΤΙΚΗ ΠΡΟΣΦΟΡΑ -50%
+                        </a>
+                     </div>
+
+                     <div class="flex flex-col items-center text-center gap-5">
+                        <h2 class="title font-bold text-2xl md:text-[32px]">
+                           Και φυσικά είναι πανεύκολο στη χρήση! 3 βήματα
+                           αρκούν!
+                        </h2>
+
+                        <article
+                           class="flex flex-col md:flex-row md:[&>div]:w-[33%] md:[&>div]:h-[620px] lg:[&>div]:h-[550px] items-center gap-5 2xl:[&>div]:w-[350px] [&>div]:py-12"
+                        >
+                           <!-- ? card -->
+                           <div
+                              class="flex flex-col items-center border p-4 text-center rounded-xl gap-5 min-h-[500px] shadow-lg"
+                           >
+                              <img src="images/c2-1.png" alt="" />
+                              <p class="text-2xl font-bold w-[80%]">
+                                 Καθάρισε το αυτοκίνητο σου και στέγνωσέ το με
+                                 ένα μαλακό πανί
+                              </p>
+                           </div>
+                           <!-- ? card -->
+                           <div
+                              class="flex flex-col items-center border text-center rounded-xl gap-5 min-h-[450px] shadow-lg p-5"
+                           >
+                              <img src="images/c2-2.png" alt="" />
+                              <p class="text-2xl font-bold w-[80%]">
+                                 Κούνησε καλά το μπουκαλάκι του ScratchGuard
+                                 Spray και ψέκασε την περιοχή
+                              </p>
+                           </div>
+                           <!-- ? card -->
+                           <div
+                              class="flex flex-col items-center border p-4 text-center rounded-xl gap-5 min-h-[5 50px] shadow-lg"
+                           >
+                              <img src="images/c2-3.png" alt="" />
+                              <p class="text-2xl font-bold w-[80%]">
+                                 Άφησε το να δράσει και στη συνέχεια σκούπισε
+                                 απαλά με ένα καθαρό πανί
+                              </p>
+                           </div>
+                        </article>
+                     </div>
+
+                     <div class="flex flex-col items-center text-center gap-5">
+                        <h2 class="title font-bold text-2xl md:text-[32px]">
+                           Κάν' το Δικό Σου Με Ένα Μόνο Κλικ
+                        </h2>
+
+                        <article
+                           class="flex flex-col md:flex-row [&>div]:w-full [&>div>img]:w-[160px] md:[&>div]:w-[25%] md:[&>div]:h-[450px] lg:[&>div]:h-[350px] items-center gap-5 [&>div]:py-5"
+                        >
+                           <!-- ?1 card -->
+                           <div
+                              class="flex flex-col items-center p-4 text-center rounded-xl gap-5 min-h-[300px]"
+                           >
+                              <img src="images/c3-1.png" alt="" />
+                              <p class="text-2xl font-bold">
+                                 Συμπληρώστε την παρακάτω φόρμα παραγγελίας
+                              </p>
+                           </div>
+                           <!-- ? 2card -->
+                           <div
+                              class="flex flex-col items-center text-center rounded-xl gap-5 min-h-[300px]"
+                           >
+                              <img src="images/c3-2.png" alt="" />
+                              <p class="text-2xl font-bold">
+                                 Θα σας καλέσουμε για να επιβεβαιώσουμε την
+                                 παραγγελία σας
+                              </p>
+                           </div>
+                           <!-- ? 3card -->
+                           <div
+                              class="flex flex-col items-center p-4 text-center rounded-xl gap-5 min-h-[300px]"
+                           >
+                              <img src="images/c-3-3.png" alt="" />
+                              <p class="text-2xl font-bold">
+                                 Στέλνουμε την παραγγελία σας εντός 48 ωρών
+                              </p>
+                           </div>
+                           <!-- ? 4card -->
+                           <div
+                              class="flex flex-col items-center p-4 text-center rounded-xl gap-5 min-h-[300px]"
+                           >
+                              <img src="images/c-3-4.png" alt="" />
+                              <p class="text-2xl font-bold">
+                                 Πληρώστε με ασφάλεια κατά την παράδοση
+                              </p>
+                           </div>
+                        </article>
+
+                        <div class="flex flex-col items-center gap-8">
+                           <h2 class="title font-bold text-2xl md:text-[32px]">
+                              Αφαίρεσε Κάθε Είδους Ατέλεια, Με Τον Πιο Απλό
+                              Τρόπο!
+                           </h2>
+
+                           <a
+                              href="#send-form"
+                              class="text- center font-bold text-base md:text-3xl lg:text-2xl text-white rounded-xl border-b-[5px] p-5 border-b-[#a75900] shadow-xl bg-[#FF8425]"
+                           >
+                              50% ΕΚΠΤΩΣΗ ΓΙΑ ΠΕΡΙΟΡΙΣΜΕΝΟ ΑΠΟΘΕΜΑ
+                           </a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </article>
+
+            <article
+               id="cards-section"
+               class="flex justify-center py-10 bg-[#F5F7F8] p-5"
+            >
+               <div
+                  class="flex sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:[1280px] 2xl:w-[1400px]"
+               >
+                  <div class="flex flex-col gap-10 items-center">
+                     <div class="flex flex-col items-center text-center gap-8">
+                        <h2 class="title font-bold text-2xl md:text-[32px]">
+                           Χιλιάδες Έλληνες δοκίμασαν το ScratchGuard Spray και
+                           μας έστειλαν τις εμπειρίες τους! Μάθε τι έχουν να
+                           πουν!
+                        </h2>
+                     </div>
+
+                     <div class="flex flex-col items-center text-center gap-5">
+                        <article
+                           class="flex flex-col md:flex-row md:[&>div]:w-[33%] md:[&>div]:h-[760px] lg:[&>div]:h-[650px] items-center gap-5 2xl:[&>div]:w-[350px] [&>div]:py-12"
+                        >
+                           <!-- ? card -->
+                           <div
+                              class="flex flex-col items-center justify-between border p-4 text-center rounded-xl gap-5 min-h-[500px] shadow-lg"
+                           >
+                              <img
+                                 src="images/c-4-1.png"
+                                 class="w-[150px] rounded-full"
+                                 alt=""
+                              />
+                              <h3 class="text-2xl font-bold w-[80%] lg:w-full">
+                                 Αλέξανδρος Αντωνίου
+                              </h3>
+                              <h4 class="font-bold">53 Ετών</h4>
+                              <p class="text-lg font-bold">
+                                 “Άμα μένεις σε μέρος που βρέψει συχνά ή ο αέρας
+                                 φέρνει σκόνη τότε θα δεις τρομερή διαφορά. Είχα
+                                 κουραστεί να πλένω σαν τρελός. Άσε που άμα μπει
+                                 σκόνη μέσα στη γρατζουνιά μετά δεν σώζεται με
+                                 τίποτα.”
+                              </p>
+
+                              <span>⭐⭐⭐⭐⭐</span>
+                           </div>
+                           <!-- ? card -->
+                           <div
+                              class="flex flex-col justify-between items-center border p-4 text-center rounded-xl gap-5 min-h-[500px] shadow-lg"
+                           >
+                              <img
+                                 src="images/c-4-2.png"
+                                 class="w-[150px] rounded-full"
+                                 alt=""
+                              />
+                              <h3 class="text-2xl font-bold w-[80%] lg:w-full">
+                                 Σπύρος Φωτίου
+                              </h3>
+                              <h4 class="font-bold">57 Ετών</h4>
+                              <p class="text-lg font-bold">
+                                 “Πολύ δυνατό προϊόν και εύκολο στη χρήση. Μου
+                                 είχαν φάει το αμάξι σε διάφορα σημεία επειδή
+                                 παρκάρω κέντρο όλη την ώρα και δεν είχα καμία
+                                 όρεξη να πληρώσω τόσα κατοστάρικα. Κάνει τη
+                                 δουλειά του παιδιά”
+                              </p>
+
+                              <span>⭐⭐⭐⭐⭐</span>
+                           </div>
+                           <!-- ? card -->
+                           <div
+                              class="flex flex-col justify-between items-center border p-4 text-center rounded-xl gap-5 min-h-[500px] shadow-lg"
+                           >
+                              <img
+                                 src="images/c-4-3.png"
+                                 class="w-[150px] rounded-full"
+                                 alt=""
+                              />
+                              <h3 class="text-2xl font-bold w-[80%] lg:w-full">
+                                 Ηρώ Σπανού
+                              </h3>
+                              <h4 class="font-bold">41 Ετών</h4>
+                              <p class="text-lg font-bold">
+                                 “Είχα κάποιες γρατζουνιές σε διάφορα σημεία.
+                                 Όσοι μένουν Αθήνα ξέρουν πως είναι οι στενοί
+                                 δρόμοι. Ευτυχώς μου πρότεινε ένας συνάδελφος
+                                 αυτό το σπρέι και τώρα το αμάξι μου φαίνεται
+                                 σαν να μην έγιναν ποτέ!”
+                              </p>
+
+                              <span>⭐⭐⭐⭐⭐</span>
+                           </div>
+                        </article>
+                     </div>
+                  </div>
+               </div>
+            </article>
+
+            <!-- ? FAQ section -->
+            <article id="faq-section" class="flex justify-center">
+               <div
+                  class="flex flex-col items-center px-4 lg:px-10 sm:px-8 gap-10 py-10 md:py-14 lg:py-20 sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] 2xl:w-[1400px]"
+               >
+                  <div
+                     class="flex flex-col items-center w-full bg-[#FFF2E9] gap-8"
+                  >
+                     <article
+                        class="lg:text-5xl text-center lg:text-start text-black"
+                     >
+                        <h3 class="title font-bold text-2xl md:text-[32px]">
+                           Εσύ Ρωτάς, Εμείς Απαντάμε
+                        </h3>
+                     </article>
+
+                     <div class="flex flex-col gap-10 px-4">
+                        <article class="accordion-item">
+                           <div
+                              class="accordion-header border-none text-md base:text-lg"
+                           >
+                              <p class="text-lg lg:text-xl font-bold">
+                                 Πώς το χρησιμοποιώ;
+                              </p>
+                              <span class="arrow">
+                                 <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="16"
+                                    height="16"
+                                    viewBox="0 0 16 16"
+                                 >
+                                    <path
+                                       fill="#000000"
+                                       d="m8.746 8l3.1-3.1a.527.527 0 1 0-.746-.746L8 7.254l-3.1-3.1a.527.527 0 1 0-.746.746l3.1 3.1l-3.1 3.1a.527.527 0 1 0 .746.746l3.1-3.1l3.1 3.1a.527.527 0 1 0 .746-.746zM8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16"
+                                    />
+                                 </svg>
+                              </span>
+                           </div>
+                           <div class="accordion-content">
+                              <p
+                                 class="accordion-content-p text-md base:text-lg"
+                              >
+                                 Είναι πάρα πολύ απλό στη χρήση. Πρώτα
+                                 καθαρίζεις και στεγνώνεις την επιφάνεια.
+                                 Έπειτα, κουνάς το ScratchGuard Spray, το
+                                 ψεκάζεις πάνω στο αμάξι σου και το αφήνεις για
+                                 μερικά λεπτά. Στη συνέχεια το σκουπίζεις με ένα
+                                 μαλακό και καθαρό πανί.
+                              </p>
+                           </div>
+                        </article>
+                        <article class="accordion-item">
+                           <div
+                              class="accordion-header border-none text-md base:text-lg"
+                           >
+                              <p class="text-lg lg:text-xl font-medium">
+                                 Επιδιορθώνει μόνο επιφανειακές γρατζουνιές;
+                              </p>
+                              <span class="arrow">
+                                 <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="16"
+                                    height="16"
+                                    viewBox="0 0 16 16"
+                                 >
+                                    <path
+                                       fill="#000000"
+                                       d="m8.746 8l3.1-3.1a.527.527 0 1 0-.746-.746L8 7.254l-3.1-3.1a.527.527 0 1 0-.746.746l3.1 3.1l-3.1 3.1a.527.527 0 1 0 .746.746l3.1-3.1l3.1 3.1a.527.527 0 1 0 .746-.746zM8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16"
+                                    />
+                                 </svg>
+                              </span>
+                           </div>
+                           <div class="accordion-content">
+                              <p
+                                 class="accordion-content-p text-md base:text-lg"
+                              >
+                                 Όχι! Το ScratchGuard Spray εξαφανίζει ακόμα και
+                                 τις πιο βαθιές γρατζουνιές.
+                              </p>
+                           </div>
+                        </article>
+
+                        <article class="accordion-item">
+                           <div
+                              class="accordion-header border-none text-md base:text-lg"
+                           >
+                              <p class="text-lg lg:text-xl font-medium">
+                                 Μπορώ να πλύνω το αυτοκίνητό μου μετά;
+                              </p>
+                              <span class="arrow">
+                                 <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="16"
+                                    height="16"
+                                    viewBox="0 0 16 16"
+                                 >
+                                    <path
+                                       fill="#000000"
+                                       d="m8.746 8l3.1-3.1a.527.527 0 1 0-.746-.746L8 7.254l-3.1-3.1a.527.527 0 1 0-.746.746l3.1 3.1l-3.1 3.1a.527.527 0 1 0 .746.746l3.1-3.1l3.1 3.1a.527.527 0 1 0 .746-.746zM8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16"
+                                    />
+                                 </svg>
+                              </span>
+                           </div>
+                           <div class="accordion-content">
+                              <p
+                                 class="accordion-content-p text-md base:text-lg"
+                              >
+                                 Μα και βέβαια! Αφού στεγνώσει, μπορείς να
+                                 κάνεις ό,τι θέλεις με το αμάξι σου.
+                              </p>
+                           </div>
+                        </article>
+
+                        <article class="accordion-item">
+                           <div
+                              class="accordion-header border-none text-md base:text-lg"
+                           >
+                              <p class="text-lg lg:text-xl font-medium">
+                                 Κι αν το αποτέλεσμα δε με ικανοποιήσει;
+                              </p>
+                              <span class="arrow">
+                                 <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="16"
+                                    height="16"
+                                    viewBox="0 0 16 16"
+                                 >
+                                    <path
+                                       fill="#000000"
+                                       d="m8.746 8l3.1-3.1a.527.527 0 1 0-.746-.746L8 7.254l-3.1-3.1a.527.527 0 1 0-.746.746l3.1 3.1l-3.1 3.1a.527.527 0 1 0 .746.746l3.1-3.1l3.1 3.1a.527.527 0 1 0 .746-.746zM8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16"
+                                    />
+                                 </svg>
+                              </span>
+                           </div>
+                           <div class="accordion-content">
+                              <p
+                                 class="accordion-content-p text-md base:text-lg"
+                              >
+                                 Καταλαβαίνουμε τις αμφιβολίες σου! Γι’ αυτό το
+                                 λόγο η εταιρία παρέχει εγγύηση επιστροφής
+                                 χρημάτων! Αν το ScratchGuard Spray δε σε
+                                 ικανοποιήσει μέσα στις πρώτες 14 μέρες χρήσης,
+                                 θα πάρεις τα χρήματά σου πίσω.
+                              </p>
+                           </div>
+                        </article>
+                     </div>
+                  </div>
+               </div>
+            </article>
+            <!-- ? Πες section -->
+            <article
+               id="cards-section"
+               class="flex justify-center py-10 bg-[#F5F7F8] p-5"
+            >
+               <div
+                  class="flex justify-center sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:[1280px] 2xl:w-[1400px]"
+               >
+                  <div class="flex flex-col gap-10 items-center">
+                     <div class="flex flex-col items-center text-center gap-8">
+                        <h2 class="title font-bold text-2xl md:text-[32px]">
+                           Πες αντίο στις γρατζουνιές και στους φανοποιούς!
+                        </h2>
+                        <p class="text-lg font-bold">
+                           Συμπλήρωσε την παρακάτω φόρμα, και εμείς θα κάνουμε
+                           τα υπόλοιπα!
+                        </p>
+                        <h2 class="title font-bold text-2xl md:text-[32px]">
+                           <span class="text-[#FF0000]">
+                              ΠΑΡΑΓΓΕΙΛΕ ΤΩΡΑ ΚΑΙ
+                           </span>
+                           ΚΕΡΔΙΣΕ 50% ΕΚΠΤΩΣΗ <del>49.80€</del> 24.90€
+                        </h2>
+                        <p class="text-lg font-bold">
+                           100% εγγύηση επιστροφής χρημάτων εντός 14 ημερών
+                        </p>
+                     </div>
+
+                     <div class="flex flex-col items-center text-center gap-5">
+                        <!-- ? CARDS -->
+                        <article
+                           class="flex flex-col md:flex-row md:justify-between md:[&>div]:w-[30%] md:[&>div]:h-[620px] lg:[&>div]:h-[550px] items-center gap-5 2xl:[&>div]:w-[350px]"
+                        >
+                           <!-- ? card -->
+                           <div
+                              class="flex flex-col items-center justify-between border text-center rounded-xl gap-2 min-h-[350px] shadow-lg"
+                           >
+                              <div
+                                 class="flex font-bold text-white justify-center items-center w-full rounded-t-xl h-[15%]"
+                              ></div>
+
+                              <div
+                                 class="flex md:flex-col-reverse items-center h-[30%] p-5"
+                              >
+                                 <div
+                                    class="w-[25%] flex items-center justify-center md:w-full h-full"
+                                 >
+                                    <img
+                                       src="images/c5-1.png"
+                                       alt=""
+                                       class="md:max-w-[120px]"
+                                    />
+                                 </div>
+                                 <div
+                                    class="w-[75%] flex items-center justify-center px-12 h-full md:w-full"
+                                 >
+                                    <h3
+                                       class="text-xl font-bold w-full text-center"
+                                    >
+                                       1x ScratchGuard Spray
+                                    </h3>
+                                 </div>
+                              </div>
+
+                              <div
+                                 class="flex flex-col w-full justify-center gap-8 items-center h-[30%]"
+                              >
+                                 <div class="">
+                                    <p
+                                       class="text-xl text-[#FF0000] flex gap-3 font-bold"
+                                    >
+                                       <del>49.80€</del>
+                                       <span
+                                          class="font-extrabold text-2xl text-black"
+                                          >24.90€</span
+                                       >
+                                    </p>
+
+                                    <p class="text-base font-bold">
+                                       *5€ Μεταφορικά
+                                    </p>
+                                 </div>
+                              </div>
+
+                              <div
+                                 class="bg-[#FF8425] flex font-bold text-white justify-center items-center w-full rounded-b-xl h-[25%]"
+                              >
+                                 ΑΓΟΡΑΣΕ ΕΔΩ
+                              </div>
+                           </div>
+                           <!-- ? card -->
+                           <div
+                              class="flex flex-col items-center justify-between border text-center rounded-xl gap-2 min-h-[350px] shadow-lg"
+                           >
+                              <div
+                                 class="flex font-bold text-white justify-center items-center w-full rounded-t-xl h-[15%]"
+                              ></div>
+
+                              <div
+                                 class="flex md:flex-col-reverse items-center h-[30%] p-5"
+                              >
+                                 <div
+                                    class="w-[25%] flex items-center justify-center md:w-full h-full"
+                                 >
+                                    <img
+                                       src="images/c5-2.png"
+                                       alt=""
+                                       class="md:max-w-[120px]"
+                                    />
+                                 </div>
+                                 <div
+                                    class="w-[75%] flex items-center justify-center px-12 h-full md:w-full"
+                                 >
+                                    <h3
+                                       class="text-xl font-bold w-full text-center"
+                                    >
+                                       2x ScratchGuard Spray
+                                    </h3>
+                                 </div>
+                              </div>
+
+                              <div
+                                 class="flex flex-col w-full justify-center gap-8 items-center h-[30%]"
+                              >
+                                 <div class=" ">
+                                    <p
+                                       class="text-xl text-[#FF0000] flex gap-3 font-bold"
+                                    >
+                                       <del>99.60€</del>
+                                       <span
+                                          class="font-extrabold text-2xl text-black"
+                                          >49.80€</span
+                                       >
+                                    </p>
+
+                                    <p class="text-base font-bold">
+                                       *5€ Μεταφορικά
+                                    </p>
+                                 </div>
+                              </div>
+
+                              <div
+                                 class="bg-[#FF8425] flex font-bold text-white justify-center items-center w-full rounded-b-xl h-[25%]"
+                              >
+                                 ΑΓΟΡΑΣΕ ΕΔΩ
+                              </div>
+                           </div>
+                           <!-- ? card -->
+                           <div
+                              class="flex flex-col items-center justify-between border text-center rounded-xl gap-2 min-h-[350px] shadow-lg"
+                           >
+                              <div
+                                 class="bg-[#0CBC00] flex font-bold text-white justify-center items-center w-full rounded-t-xl h-[10%]"
+                              >
+                                 ΜΕΓΑΛΥΤΕΡΟ ΚΕΡΔΟΣ!
+                              </div>
+
+                              <div
+                                 class="flex md:flex-col-reverse items-center h-[35%] p-5"
+                              >
+                                 <div
+                                    class="w-[25%] flex items-center justify-center md:w-full h-full"
+                                 >
+                                    <img
+                                       src="images/c5-3.png"
+                                       alt=""
+                                       class="md:max-w-[120px]"
+                                    />
+                                 </div>
+                                 <div
+                                    class="w-[75%] flex items-center justify-center px-12 h-full md:w-full"
+                                 >
+                                    <h3
+                                       class="text-xl font-bold w-full text-center"
+                                    >
+                                       3x ScratchGuard Spray
+                                    </h3>
+                                 </div>
+                              </div>
+
+                              <div
+                                 class="flex flex-col w-full justify-center gap-8 items-center h-[30%]"
+                              >
+                                 <div class="">
+                                    <p
+                                       class="text-xl text-[#FF0000] flex gap-3 font-bold"
+                                    >
+                                       <del>119.40€</del>
+                                       <span
+                                          class="font-extrabold text-2xl text-black"
+                                          >59.70€</span
+                                       >
+                                    </p>
+
+                                    <p class="text-base font-bold">
+                                       *5€ Μεταφορικά
+                                    </p>
+                                 </div>
+                              </div>
+
+                              <div
+                                 class="bg-[#FF8425] flex font-bold text-white justify-center items-center w-full rounded-b-xl h-[25%]"
+                              >
+                                 ΑΓΟΡΑΣΕ ΕΔΩ
+                              </div>
+                           </div>
+                        </article>
+                     </div>
+                  </div>
+               </div>
+            </article>
+
+            <!-- ? form section -->
+            <article
+               id="cards-section"
+               class="flex justify-center py-10 bg-[#F5F7F8] p-5"
+            >
+               <div
+                  class="flex flex-col md:flex-row items-center gap-10 w-full sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] 2xl:w-[1400px]"
+               >
+                  <div
+                     class="flex w-full flex-col gap-5 md:w-[50%] items-center"
+                  >
+                     <div
+                        class="flex flex-col items-center w-full border bg-[#dce3ff] rounded-xl"
+                     >
+                        <form
+                           id="send-form"
+                           class="flex flex-col p-5 gap-3 w-full [&>input]:rounded-lg [&>input]:p-2"
+                           action=""
+                        >
+                           <label for="package" class="font-bold text-xl"
+                              >Επιλέξτε πακέτο</label
+                           >
+                           <select
+                              id="package"
+                              class="rounded-lg p-2 font-bold w-full"
+                              name="package"
+                           >
+                              <option value="">1 ScratchGuard Spray</option>
+                              <option value="">2 ScratchGuard Spray</option>
+                              <option value="">3 ScratchGuard Spray</option>
+                           </select>
+
+                           <input
+                              type="text"
+                              id="name"
+                              name="name"
+                              placeholder="Ονοματεπώνυμο"
+                              class="placeholder:font-bold w-full"
+                           />
+
+                           <input
+                              type="text"
+                              id="city"
+                              name="city"
+                              placeholder="Πόλη"
+                              class="placeholder:font-bold w-full"
+                           />
+
+                           <input
+                              type="text"
+                              id="address"
+                              name="address"
+                              placeholder="Διεύθυνση"
+                              class="placeholder:font-bold w-full"
+                           />
+
+                           <input
+                              type="text"
+                              id="zipcode"
+                              name="zipcode"
+                              placeholder="Ταχυδρομικός Κώδικας"
+                              class="placeholder:font-bold w-full"
+                           />
+
+                           <input
+                              type="text"
+                              id="phone"
+                              name="phone"
+                              placeholder="Αριθμός Τηλεφώνου"
+                              class="placeholder:font-bold w-full"
+                           />
+
+                           <input
+                              type="email"
+                              id="email"
+                              name="email"
+                              placeholder="Email (Προαιρετικό)"
+                              class="placeholder:font-bold w-full"
+                           />
+                        </form>
+                     </div>
+                     <button
+                        type="submit"
+                        onclick="sendSubscribeForm('send-form')"
+                        class="font-bold text-base md:text-3xl lg:text-2xl text-white rounded-xl border-b-[5px] p-5 border-b-[#a75900] shadow-xl bg-[#FF8425]"
+                     >
+                        ΠΑΡΑΓΓΕΙΛΕ ΤΩΡΑ ΜΕ ΕΚΠΤΩΣΗ 50%
+                     </button>
+
+                     <div
+                        class="bg-[#FFF4DF] font-bold p-3 flex items-center justify-center text-center border-dashed border border-black"
+                     >
+                        <h2>
+                           Πληρώνεις με αντικαταβολή μόνο αφού παραλάβεις το
+                           προϊόν!
+                        </h2>
+                     </div>
+                  </div>
+
+                  <div class="flex flex-col items-center md:w-[50%] gap-5">
+                     <h2 class="title font-bold text-2xl md:text-[32px]">
+                        Κάνε το δικό σου σήμερα!
+                     </h2>
+                     <p class="font-bold">
+                        Ο ενδεικτικός χρόνος παράδοσης από τη στιγμή που θα
+                        αποσταλεί η παραγγελία σου είναι:
+                     </p>
+                     <p class="font-bold">
+                        – 1 έως 3 ημέρες για την ηπειρωτική Ελλάδα.
+                     </p>
+                     <p class="font-bold">
+                        – Έως και 5 ημέρες για την νησιωτική Ελλάδα.
+                     </p>
+                     <div class="">
+                        <img src="images/map.png" alt="" />
+                     </div>
+                  </div>
+               </div>
+            </article>
          </section>
       </main>
-
+      <!-- ? FOOTER section -->
       <footer id="footer" class="flex justify-center bg-[#CCE0EB] px-4 py-10">
          <div
             class="flex flex-col gap-5 items-center sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:[1280px] 2xl:w-[1400px]"
@@ -476,12 +1414,29 @@
             <div
                class="[&>a]:text-sm [&>a]:font-bold [&>a]:text-[#4089C3] flex flex-wrap gap-2 justify-center"
             >
-               <a href=""> Πολιτική Απορρήτου</a>
-               <a href=""> Όροι και</a>
-               <a href="">Προϋποθέσεις</a>
-               <a href="">Ποιοι Είμαστε </a>
-               <a href="">Επικοινωνία</a>
-               <a href="">Impressum</a>
+               <a
+                  onclick="clickModal('privacy-modal')"
+                  class="hover:text-[#2f49a0]"
+               >
+                  Πολιτική Απορρήτου</a
+               >
+               <a
+                  onclick="clickModal('terms-modal')"
+                  class="hover:text-[#2f49a0]"
+               >
+                  Όροι και Προϋποθέσεις</a
+               >
+
+               <a
+                  onclick="clickModal('about-modal')"
+                  class="hover:text-[#2f49a0]"
+                  >Ποιοι Είμαστε
+               </a>
+               <a
+                  onclick="clickModal('contact-modal')"
+                  class="hover:text-[#2f49a0]"
+                  >Επικοινωνία</a
+               >
             </div>
 
             <p class="text-sm/[29px] font-bold text-center text-[#777777]">
@@ -539,7 +1494,7 @@
       <!-- ? Terms and Conditions Modal -->
       <section
          id="terms-modal"
-         class="bg-[#00000088] font-[Inter] flex items-center justify-center min-h-screen absolute z-50 hidden"
+         class="bg-[#00000088] font-Montserrat flex items-center justify-center min-h-screen absolute z-50 hidden"
       >
          <div
             class="fixed inset-0 w-full bg-[#00000088] flex items-center justify-center max-h-screen"
@@ -554,84 +1509,176 @@
                      src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSIjRUZFRkVGIiBkPSJNMTkgM0g1YTIgMiAwIDAgMC0yIDJ2MTRhMiAyIDAgMCAwIDIgMmgxNGEyIDIgMCAwIDAgMi0yVjVhMiAyIDAgMCAwLTItMm0tMy40IDE0TDEyIDEzLjRMOC40IDE3TDcgMTUuNmwzLjYtMy42TDcgOC40TDguNCA3bDMuNiAzLjZMMTUuNiA3TDE3IDguNEwxMy40IDEybDMuNiAzLjZ6Ii8+PC9zdmc+"
                      alt=""
                   />
-                  <div class="bg-primarybg w-full">
+                  <div class="bg-[#FF8425] w-full">
                      <h2
                         class="text-base text-center p-4 font-bold text-white w-full"
                      >
-                        Terms and Conditions
+                        Όροι και Προϋποθέσεις
                      </h2>
                   </div>
                </div>
 
                <article
-                  class="overflow-y-auto overflow-x-hidden h-96 p-5 text-xs flex flex-col gap-4"
+                  class="overflow-y-auto overflow-x-hidden bg-white h-96 p-5 text-xs flex flex-col gap-4"
                >
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
-                  natus, maiores numquam dicta, at unde sunt est adipisci,
-                  nesciunt praesentium quam. Sint similique quidem at, earum
-                  reiciendis omnis doloremque explicabo. Lorem ipsum, dolor sit
-                  amet consectetur adipisicing elit. Expedita, porro perferendis
-                  quos quam corrupti hic debitis sunt ullam, illo incidunt iste
-                  obcaecati harum nisi omnis et quaerat fugit tempore
-                  praesentium! Lorem ipsum dolor sit amet consectetur
-                  adipisicing elit. Magnam amet corrupti nisi sed. Ea maxime
-                  dolor consectetur quam esse quae natus quod error, dolorum
-                  voluptate nam excepturi eveniet. Repudiandae, quia. Lorem
-                  ipsum dolor sit amet consectetur adipisicing elit. Autem
-                  natus, maiores numquam dicta, at unde sunt est adipisci,
-                  nesciunt praesentium quam. Sint similique quidem at, earum
-                  reiciendis omnis doloremque explicabo. Lorem ipsum, dolor sit
-                  amet consectetur adipisicing elit. Expedita, porro perferendis
-                  quos quam corrupti hic debitis sunt ullam, illo incidunt iste
-                  obcaecati harum nisi omnis et quaerat fugit tempore
-                  praesentium! Lorem ipsum dolor sit amet consectetur
-                  adipisicing elit. Magnam amet corrupti nisi sed. Ea maxime
-                  dolor consectetur quam esse quae natus quod error, dolorum
-                  voluptate nam excepturi eveniet. Repudiandae, quia. Lorem
-                  ipsum dolor sit amet consectetur adipisicing elit. Autem
-                  natus, maiores numquam dicta, at unde sunt est adipisci,
-                  nesciunt praesentium quam. Sint similique quidem at, earum
-                  reiciendis omnis doloremque explicabo. Lorem ipsum, dolor sit
-                  amet consectetur adipisicing elit. Expedita, porro perferendis
-                  quos quam corrupti hic debitis sunt ullam, illo incidunt iste
-                  obcaecati harum nisi omnis et quaerat fugit tempore
-                  praesentium! Lorem ipsum dolor sit amet consectetur
-                  adipisicing elit. Magnam amet corrupti nisi sed. Ea maxime
-                  dolor consectetur quam esse quae natus quod error, dolorum
-                  voluptate nam excepturi eveniet. Repudiandae, quia. Lorem
-                  ipsum dolor sit amet consectetur adipisicing elit. Autem
-                  natus, maiores numquam dicta, at unde sunt est adipisci,
-                  nesciunt praesentium quam. Sint similique quidem at, earum
-                  reiciendis omnis doloremque explicabo. Lorem ipsum, dolor sit
-                  amet consectetur adipisicing elit. Expedita, porro perferendis
-                  quos quam corrupti hic debitis sunt ullam, illo incidunt iste
-                  obcaecati harum nisi omnis et quaerat fugit tempore
-                  praesentium! Lorem ipsum dolor sit amet consectetur
-                  adipisicing elit. Magnam amet corrupti nisi sed. Ea maxime
-                  dolor consectetur quam esse quae natus quod error, dolorum
-                  voluptate nam excepturi eveniet. Repudiandae, quia. Lorem
-                  ipsum dolor sit amet consectetur adipisicing elit. Autem
-                  natus, maiores numquam dicta, at unde sunt est adipisci,
-                  nesciunt praesentium quam. Sint similique quidem at, earum
-                  reiciendis omnis doloremque explicabo. Lorem ipsum, dolor sit
-                  amet consectetur adipisicing elit. Expedita, porro perferendis
-                  quos quam corrupti hic debitis sunt ullam, illo incidunt iste
-                  obcaecati harum nisi omnis et quaerat fugit tempore
-                  praesentium! Lorem ipsum dolor sit amet consectetur
-                  adipisicing elit. Magnam amet corrupti nisi sed. Ea maxime
-                  dolor consectetur quam esse quae natus quod error, dolorum
-                  voluptate nam excepturi eveniet. Repudiandae, quia. Lorem
-                  ipsum dolor sit amet consectetur adipisicing elit. Autem
-                  natus, maiores numquam dicta, at unde sunt est adipisci,
-                  nesciunt praesentium quam. Sint similique quidem at, earum
-                  reiciendis omnis doloremque explicabo. Lorem ipsum, dolor sit
-                  amet consectetur adipisicing elit. Expedita, porro perferendis
-                  quos quam corrupti hic debitis sunt ullam, illo incidunt iste
-                  obcaecati harum nisi omnis et quaerat fugit tempore
-                  praesentium! Lorem ipsum dolor sit amet consectetur
-                  adipisicing elit. Magnam amet corrupti nisi sed. Ea maxime
-                  dolor consectetur quam esse quae natus quod error, dolorum
-                  voluptate nam excepturi eveniet. Repudiandae, quia.
+                  <h3 class="font-semibold text-lg">Όροι και Προϋποθέσεις</h3>
+                  <p class="text-sm">
+                     Αυτός ο ιστότοπος είναι ένας χώρος αγορών. Ο ιδιοκτήτης
+                     έχει ουσιαστική οικονομική σχέση με τον πάροχο των αγαθών
+                     που αναφέρονται στον ιστότοπο, δεδομένου ότι λαμβάνει
+                     αποζημίωση για τα κλικ στη διαφήμιση ή για τις πωλήσεις των
+                     προϊόντων. Δεν είμαστε υπεύθυνοι για τις επιστροφές
+                     προϊόντων, την υποστήριξη που σχετίζεται με το προϊόν και
+                     την αποστολή προϊόντων. Εάν δεν είστε απόλυτα
+                     ευχαριστημένοι με τα αγαθά που λάβατε, επικοινωνήστε
+                     απευθείας με τον πάροχο των αγαθών. Αυτός ο ιστότοπος
+                     παρέχει μέσω του καθορισμένου λογισμικού και του ιστότοπού
+                     του ορισμένες υπηρεσίες μάρκετινγκ, διαφήμισης, προώθησης
+                     και σχετικές υπηρεσίες. Αυτοί οι Όροι Χρήσης διέπουν την
+                     πρόσβαση και χρήση του scratchguardspray.com από τους
+                     χρήστες. Οι χρήστες πρέπει να συμφωνήσουν με αυτούς τους
+                     Όρους πριν από τη χρήση του scratchguardspray.com Ο πάροχος
+                     του προϊόντος έχει την πλήρη ευθύνη όταν πρόκειται για την
+                     παραγγελία σας. Βρείτε τους Όρους και τις Προϋποθέσεις των
+                     προϊόντων που αναφέρονται σε αυτόν τον ιστότοπο,
+                     επισκεπτόμενοι τον σύνδεσμο του παρόχου που βρίσκεται
+                     παρακάτω:
+                  </p>
+                  <h3 class="font-semibold text-lg">
+                     Σχετικά με τον ιστότοπό μας
+                  </h3>
+                  <p class="text-sm">
+                     Αυτή είναι μια διαφήμιση και όχι ένα πραγματικό άρθρο
+                     ειδήσεων, ιστολόγιο ή ενημέρωση για την προστασία των
+                     καταναλωτών.
+                     <br /><br />
+                     Το scratchguardspray.com λειτουργεί από επαγγελματίες και
+                     σκοπός του είναι να δίνει τη δυνατότητα στους χρήστες να
+                     ζητούν προσφορές ή πληροφορίες για το προϊόν ή την υπηρεσία
+                     που εμφανίζεται ή επιλέγεται σε αυτόν τον ιστότοπο.
+                     <br /><br />
+                     Η υπηρεσία που παρέχει ο ιστότοπός μας είναι να συνδέει
+                     άτομα που θέλουν να μάθουν περισσότερα για την υπηρεσία με
+                     τρίτους παρόχους. Χρησιμοποιώντας τον ιστότοπό μας,
+                     κατανοείτε και συμφωνείτε ότι είστε αποκλειστικά υπεύθυνοι
+                     για τη λήψη των δικών σας αξιολογήσεων, αποφάσεων και
+                     εκτιμήσεων σχετικά με το εάν θα συνεργαστείτε με
+                     οποιονδήποτε Πάροχο Υπηρεσιών ή θα αλληλεπιδράσετε με
+                     οποιονδήποτε άλλον τρόπο με οποιονδήποτε Πάροχο Υπηρεσιών.
+                  </p>
+
+                  <h3 class="font-semibold text-lg">
+                     Κατανοείτε και συμφωνείτε ότι η Εταιρεία:
+                  </h3>
+                  <p class="text-sm">
+                     (α) δεν χρησιμοποιεί, δεν προτείνει ή εγκρίνει τρίτα μέρη ή
+                     προϊόντα, ανάλογα με την περίπτωση, ή οποιοδήποτε
+                     συνδεδεμένο μέρος με αυτά, και δεν έχει κανέναν έλεγχο στις
+                     πράξεις ή παραλείψεις οποιουδήποτε Τρίτου, την επιχείρησή
+                     του, τα προϊόντα ή τις υπηρεσίες του. (β) δεν παρέχει καμία
+                     δήλωση ή εγγύηση σχετικά με τα τρίτα μέρη και τα προϊόντα,
+                     συμπεριλαμβανομένης της ποιότητας, της τιμής, της
+                     συμβατότητας, της διαθεσιμότητας ή οποιωνδήποτε άλλων
+                     χαρακτηριστικών, ή σχετικά με τις αλληλεπιδράσεις ή τις
+                     συναλλαγές σας με τρίτα μέρη. (γ) δεν προβαίνει σε δηλώσεις
+                     ή εγγυήσεις σχετικά με τα ιδιοκτησιακά δικαιώματα ή άλλα
+                     δικαιώματα ή χαρακτηριστικά ή ρυθμιστικές πτυχές που
+                     σχετίζονται με τα προϊόντα, συμπεριλαμβανομένης τυχόν
+                     απαιτούμενης εξουσιοδότησης, αδειών ή αδειών για τη
+                     μεταφόρτωση, κοινή χρήση ή με άλλο τρόπο διάθεση και για
+                     χρήση, πώληση και αγορά τέτοιων προϊόντων. (δ) δεν
+                     ευθύνεται για την απόδοση ή τη συμπεριφορά οποιουδήποτε
+                     χρήστη ή άλλων τρίτων με οποιονδήποτε τρόπο που
+                     χρησιμοποιεί ή έχει χρησιμοποιήσει τις Υπηρεσίες και/ή
+                     εντός ή εκτός scratchguardspray.com
+                     <br /><br />
+                     Η Εταιρεία δεν υποχρεούται να ελέγξει ή με άλλο τρόπο να
+                     επαληθεύσει οποιαδήποτε πληροφορία σχετικά με τρίτα μέρη
+                     ή/και χρήστες, τα προϊόντα ή οποιοδήποτε άλλο
+                     χαρακτηριστικό που σχετίζεται με το scratchguardspray.com,
+                     και ως εκ τούτου, θα πρέπει να είστε προσεκτικοί και να
+                     κάνετε τις δικές σας εξετάσεις και ελέγχους πριν εμπλακείτε
+                     με οποιονδήποτε μέσω των Υπηρεσιών ή του
+                     scratchguardspray.com ή άλλως αλληλεπιδρώντας με
+                     οποιονδήποτε.
+                     <br /><br />
+                     Η Εταιρεία αποποιείται ρητά και απαλλάσσετε ρητά την
+                     Εταιρεία από οποιαδήποτε ευθύνη για τυχόν διαμάχες,
+                     αξιώσεις, μηνύσεις, τραυματισμούς, απώλεια, ζημιά και/ή
+                     ζημιές που προκύπτουν από και/ή με οποιονδήποτε τρόπο που
+                     σχετίζονται με τα Τρίτα Μέρη, προϊόντα, υπηρεσίες και
+                     scratchguardspray.com ή τις αλληλεπιδράσεις ή τις
+                     συναλλαγές σας με τρίτα μέρη, συμπεριλαμβανομένων χωρίς
+                     περιορισμό πράξεων ή/και παραλείψεων τρίτων με οποιονδήποτε
+                     τρόπο που χρησιμοποιούν ή συνδέονται με τις υπηρεσίες ή την
+                     εταιρεία με οποιοδήποτε μέσο. com, αναγνωρίζετε ότι είστε
+                     αποκλειστικά υπεύθυνοι για αυτή τη χρήση και τις συνδέσεις,
+                     τις αλληλεπιδράσεις, τις αγορές ή οποιαδήποτε άλλη ενέργεια
+                     κάνετε και ότι όλη η χρήση των υπηρεσιών ή του
+                     scratchguardspray.com γίνεται με αποκλειστική ευθύνη σας.
+                     <br /><br />
+
+                     Για την αποφυγή οποιασδήποτε αμφιβολίας, η Εταιρεία δεν
+                     πουλά, αδειοδοτεί ή καθιστά με άλλον τρόπο στη διάθεσή σας
+                     προϊόντα ή υπηρεσίες και δεν φέρει καμία ευθύνη για
+                     οποιαδήποτε προϊόντα ή υπηρεσίες που αγοράσατε από
+                     οποιοδήποτε τρίτο μέρος, συμπεριλαμβανομένων χωρίς
+                     περιορισμούς, με σεβασμό σε οποιαδήποτε υποστήριξη και
+                     συντήρηση, προεπιλογές, σφάλματα, αποτυχίες, ζημιές ή
+                     κόστος οποιουδήποτε είδους. Οι πληροφορίες που βρίσκετε σε
+                     αυτόν τον ιστότοπο είναι μόνο για ενημερωτικούς σκοπούς και
+                     δεν αντικαθιστούν τις συμβουλές ενός ειδικού. Αναφερόμαστε
+                     σε προϊόντα και υπηρεσίες για τα οποία Δεν είμαστε ούτε
+                     παραγωγοί ούτε άμεσοι προμηθευτές. Όλα τα εμπορικά σήματα,
+                     οι εικόνες και τα πνευματικά δικαιώματα τρίτων σε αυτήν τη
+                     σελίδα χρησιμοποιούνται για σκοπούς συγκριτικής διαφήμισης,
+                     κριτικής ή κριτικής.
+                  </p>
+
+                  <h3 class="font-semibold text-lg">
+                     Υπερσύνδεσμοι από τρίτα μέρη
+                  </h3>
+                  <p class="text-sm">
+                     Ο ιστότοπός μας μπορεί να περιέχει υπερσυνδέσμους. Εάν
+                     κάνετε κλικ σε αυτόν τον υπερσύνδεσμο, θα εγκαταλείψετε τον
+                     ιστότοπό μας και θα μεταβείτε στον ιστότοπο μιας άλλης
+                     εταιρείας. Σε αυτό το σημείο, το scratchguardspray.com δεν
+                     έχει καμία επιρροή στις υπηρεσίες που προσφέρονται από τον
+                     εν λόγω ιστότοπο ή στις μεθόδους του ιστότοπου. Αυτοί οι
+                     ιστότοποι έχουν τη δική τους πολιτική απορρήτου που είναι
+                     εντελώς ξεχωριστή από την πολιτική απορρήτου μας. Η
+                     πολιτική απορρήτου μας αναφέρεται μόνο σε δεδομένα που
+                     υποβάλλονται σε επεξεργασία από το scratchguardspray.com.
+                     Ως εκ τούτου, το scratchguardspray.com δεν αποδέχεται καμία
+                     ευθύνη ή υποχρέωση για υπηρεσίες ή/και ιστότοπους τρίτων ή
+                     τις μεθόδους και/ή το περιεχόμενό τους.
+                  </p>
+                  <h3 class="font-semibold text-lg">
+                     Αποποίηση ευθύνης κερδών
+                  </h3>
+                  <p class="text-sm">
+                     Ο κάτοχος αυτού του ιστότοπου έχει ουσιαστική οικονομική
+                     σύνδεση με τους Παρόχους Υπηρεσιών που αναφέρονται στον
+                     ιστότοπο, καθώς λαμβάνει αποζημίωση για κλικ στις
+                     διαφημίσεις ή για πωλήσεις των προϊόντων ή των υπηρεσιών.
+                  </p>
+                  <h3 class="font-semibold text-lg">Επικοινωνήστε μαζί μας</h3>
+                  <p class="text-sm">
+                     Συμπερασματικά, παρόλο που είναι δουλειά μας να δοκιμάσουμε
+                     επιλεγμένα προϊόντα και να παρέχουμε τη γνώμη μας για αυτά,
+                     είμαστε ακριβώς όπως εσείς. Μας αρέσει να ακολουθούμε τις
+                     τάσεις της τεχνολογίας, είμαστε γονείς, αγαπάμε τα gadgets,
+                     είμαστε ιδιοκτήτες κατοικίδιων ζώων, και έχουμε πάθος να
+                     κάνουμε τη ζωή μας πιο εύκολη μέσω μιας έξυπνης αγοράς.
+                  </p>
+                  <h3 class="font-semibold text-lg">Αλλαγές στους Όρους μας</h3>
+                  <p class="text-sm">
+                     Διατηρούμε το δικαίωμα να κάνουμε αλλαγές στους όρους και
+                     τις προϋποθέσεις μας ανά πάσα στιγμή χωρίς να σας
+                     ειδοποιήσουμε. Συνιστάται να επισκεφτείτε ξανά αυτήν τη
+                     σελίδα στο μέλλον για να ελέγξετε για τυχόν αλλαγές στους
+                     όρους μας.
+                  </p>
                </article>
             </div>
          </div>
@@ -640,7 +1687,7 @@
       <!-- ? Privacy Policy Modal -->
       <section
          id="privacy-modal"
-         class="bg-[#00000088] font-[Inter] flex items-center justify-center min-h-screen absolute z-50 hidden"
+         class="bg-[#00000088] font-Montserrat flex items-center justify-center min-h-screen absolute z-50 hidden"
       >
          <div
             class="fixed inset-0 w-full bg-[#00000088] flex items-center justify-center max-h-screen"
@@ -655,26 +1702,201 @@
                      src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSIjRUZFRkVGIiBkPSJNMTkgM0g1YTIgMiAwIDAgMC0yIDJ2MTRhMiAyIDAgMCAwIDIgMmgxNGEyIDIgMCAwIDAgMi0yVjVhMiAyIDAgMCAwLTItMm0tMy40IDE0TDEyIDEzLjRMOC40IDE3TDcgMTUuNmwzLjYtMy42TDcgOC40TDguNCA3bDMuNiAzLjZMMTUuNiA3TDE3IDguNEwxMy40IDEybDMuNiAzLjZ6Ii8+PC9zdmc+"
                      alt=""
                   />
-                  <div class="bg-primarybg w-full">
+                  <div class="bg-[#FF8425] w-full">
                      <h2
                         class="text-base text-center p-4 font-bold text-white w-full"
                      >
-                        Privacy Policy
+                        Πολιτική Απορρήτου
                      </h2>
                   </div>
                </div>
 
                <article
-                  class="overflow-y-auto overflow-x-hidden h-96 p-5 text-xs flex flex-col gap-4"
-               ></article>
+                  class="overflow-y-auto overflow-x-hidden bg-white h-96 p-5 text-xs flex flex-col gap-4"
+               >
+                  <h3 class="font-semibold text-lg">Πολιτική Απορρήτου</h3>
+                  <p class="text-sm">
+                     Αυτός ο ιστότοπος είναι ένας χώρος αγορών. Ο ιδιοκτήτης
+                     έχει ουσιαστική οικονομική σχέση με τον πάροχο των αγαθών
+                     που αναφέρονται στον ιστότοπο, καθώς λαμβάνει αποζημίωση
+                     για τα κλικ στη διαφήμιση ή για πωλήσεις του κάθε
+                     προϊόντος. Δεν είμαστε υπεύθυνοι για τις επιστροφές
+                     προϊόντων, την υποστήριξη που σχετίζεται με το προϊόν και
+                     την αποστολή προϊόντων. Εάν δεν είστε απόλυτα
+                     ευχαριστημένοι με τα αγαθά που λάβατε, επικοινωνήστε
+                     απευθείας με τον πάροχο των αγαθών. <br />
+                     <br />
+                     Ο πάροχος του προϊόντος έχει την πλήρη ευθύνη όταν
+                     πρόκειται για την παραγγελία σας. Βρείτε τη Δήλωση
+                     Πολιτικής Απορρήτου των προϊόντων που αναφέρονται σε αυτόν
+                     τον ιστότοπο, επισκεπτόμενοι τον σύνδεσμο του παρόχου που
+                     βρίσκεται παρακάτω:
+                  </p>
+                  <h3 class="font-semibold text-lg">Πολιτική Απορρήτου</h3>
+                  <p class="text-sm">
+                     Έχετε ορισμένα δικαιώματα σε σχέση με τα δεδομένα σας,
+                     συμπεριλαμβανομένου του δικαιώματος αντίρρησης στην
+                     επεξεργασία με βάση τα νόμιμα συμφέροντα, τη δημιουργία
+                     προφίλ (συμπεριλαμβανομένης της χρήσης προσαρμοσμένου και
+                     παρόμοιου κοινού) και του άμεσου μάρκετινγκ. Ανά πάσα
+                     στιγμή, μπορείτε να ασκήσετε τα δικαιώματά σας στέλνοντάς
+                     μας email.
+
+                     <br />
+                     <br />
+                     Για περισσότερες λεπτομέρειες σχετικά με την επεξεργασία
+                     μας και τα δικαιώματά σας, ανατρέξτε παρακάτω: <br /><br />
+                     Κατανοούμε ότι το απόρρητο είναι πολύ σημαντικό για κάθε
+                     χρήστη του Διαδικτύου αυτές τις μέρες. Γι' αυτό θα θέλαμε
+                     να σας ενημερώσουμε για αυτό το θέμα. Ποια δεδομένα
+                     συλλέγουμε, πώς τα συλλέγουμε, τι κάνουμε με αυτές τις
+                     πληροφορίες και πώς τα χειριζόμαστε: θα διαβάσετε τα πάντα
+                     σε αυτήν τη σελίδα. <br />
+                     <br />
+
+                     Το ' . scratchguardspray.com . ' δίνει μεγάλη αξία στο
+                     απόρρητο κάθε επισκέπτη στον ιστότοπό μας. Γι' αυτό
+                     φροντίζουμε τα δεδομένα που μας αφήνετε να διατηρούνται
+                     απολύτως εμπιστευτικά. Το ' . scratchguardspray.com . '
+                     ενεργεί σύμφωνα με τον Νόμο για την Προστασία Δεδομένων
+                     Προσωπικού Χαρακτήρα και, από τις 25 Μαΐου 2018, τον Γενικό
+                     Κανονισμό Προστασίας Δεδομένων, στο μέτρο που αυτό ισχύει
+                     για εμάς, και τον Νόμο του 2018 για την Προστασία των
+                     Καταναλωτών της Καλιφόρνια (CCPA). <br /><br />
+                     Προς το παρόν, ο ιστότοπός μας δεν προσφέρει τη δυνατότητα
+                     δημιουργίας προφίλ χρηστών, λογαριασμών, σχολίων ή αγοράς
+                     προϊόντων απευθείας από τον ιστότοπό μας. Επίσης, δεν
+                     παρέχουμε την επιλογή εγγραφής σε ενημερωτικό δελτίο με τα
+                     προσωπικά σας στοιχεία, ούτε σας στέλνουμε τυχόν
+                     ενημερωτικά δελτία ή email. Μόνο συμπληρώνοντας τη φόρμα
+                     επικοινωνίας θα λάβουμε τα προσωπικά σας δεδομένα, αλλά
+                     αυτά περιορίζονται στις πληροφορίες που συμπληρώνετε εσείς.
+                     Χρησιμοποιούμε (αποπροσωποποιημένα) δεδομένα για να
+                     διασφαλίσουμε ότι ο ιστότοπός μας λειτουργεί σωστά/
+                     Συλλέγουμε αυτές τις πληροφορίες μέσω λειτουργικών και
+                     αναλυτικών cookies. Τοποθετούμε επίσης cookies μάρκετινγκ.
+                  </p>
+                  <h3 class="font-semibold text-lg">
+                     Τι είδους προσωπικά δεδομένα συλλέγουμε και
+                     επεξεργαζόμαστε;
+                  </h3>
+                  <p class="text-sm">
+                     Όπως αναφέρθηκε προηγουμένως, το scratchguardspray.com δεν
+                     παρέχει τη δυνατότητα δημιουργίας προφίλ χρήστη ή
+                     οποιουδήποτε τύπου λογαριασμού σε αυτόν τον ιστότοπο. Είναι
+                     επίσης αδύνατο να σχολιάσετε, να δημιουργήσετε λογαριασμό,
+                     να αγοράσετε προϊόντα μέσω του ιστότοπού μας ή να
+                     εγγραφείτε σε ενημερωτικό δελτίο, ούτε να σας στείλουμε
+                     ενημερωτικά δελτία ή μηνύματα ηλεκτρονικού ταχυδρομείου.
+                     Αυτό ήδη αποκλείει έναν πολύ συνηθισμένο λόγο για τη
+                     συλλογή των προσωπικών σας δεδομένων από την υποβολή
+                     αίτησης σε εμάς.
+                  </p>
+                  <h3 class="font-semibold text-lg">
+                     Συλλογή και επεξεργασία στατιστικών δεδομένων που
+                     δημιουργούνται αυτόματα.
+                  </h3>
+                  <p class="text-sm">
+                     Για να βεβαιωθείτε ότι ο ιστότοπος λειτουργεί βέλτιστα και
+                     για να συνεχίσει να βελτιώνεται, οι πληροφορίες σχετικά με
+                     τη χρήση του ιστότοπού μας υποβάλλονται σε αυτόματη
+                     επεξεργασία. Η βελτιστοποίηση του ιστότοπού μας έχει να
+                     κάνει κυρίως με τεχνικές προσαρμογές που, για παράδειγμα,
+                     διασφαλίζουν ότι οι σελίδες μας εμφανίζονται σωστά και ότι
+                     είναι ασφαλείς και προστατευμένες. Οι πληροφορίες που
+                     υποβάλλονται σε επεξεργασία αποτελούνται, για παράδειγμα,
+                     από τον τύπο της συσκευής που χρησιμοποιείτε (υπολογιστής,
+                     κινητό, tablet), τη διεύθυνση IP σας (τη διεύθυνση
+                     Διαδικτύου της συσκευής σας που συνδέεται συχνά με τη
+                     γενική τοποθεσία σας), το πρόγραμμα περιήγησης που
+                     χρησιμοποιείτε, τη λειτουργία σύστημα που χρησιμοποιείτε,
+                     τις σελίδες που επισκέπτεστε στον ιστότοπό μας και από πού
+                     ήρθατε πριν προσγειωθείτε στον ιστότοπό μας. Αυτά είναι
+                     αποπροσωποποιημένα δεδομένα και είναι αδύνατο να τα
+                     εντοπίσουμε σε εσάς. Αυτές οι πληροφορίες συλλέγονται με
+                     την τοποθέτηση αναλυτικών cookies. Μπορείτε να διαβάσετε
+                     περισσότερα για αυτό στη Δήλωση Cookie παρακάτω.
+                  </p>
+                  <h3 class="font-semibold text-lg">
+                     Πηγές Προσωπικών Πληροφοριών
+                  </h3>
+                  <p class="text-sm">
+                     Λαμβάνουμε τις κατηγορίες προσωπικών πληροφοριών που
+                     αναφέρονται παραπάνω από τις ακόλουθες κατηγορίες πηγών:
+                     <br />
+                     <br />
+                     Απευθείας από εσάς. Για παράδειγμα, από φόρμες που
+                     συμπληρώνετε ή προϊόντα και υπηρεσίες, αγοράζετε. <br />
+                     Έμμεσα από εσάς. Για παράδειγμα, από την παρατήρηση των
+                     ενεργειών σας στους ιστότοπούς μας. <br />
+                     Από τρίτους επιχειρηματικούς συνεργάτες, όπως παρόχους
+                     αναλυτικών στοιχείων. <br />
+                     Η συλλογή και η επεξεργασία στοιχείων επικοινωνίας και η
+                     επεξεργασία στατιστικών δεδομένων είναι <br />
+                     απαραίτητη για τη διασφάλιση των έννομων συμφερόντων του
+                     scratchguardspray.com και, ως εκ τούτου, δεν μπορεί να
+                     απορριφθεί.
+                  </p>
+
+                  <h3 class="font-semibold text-lg">
+                     Χρήση των δεδομένων σας από τρίτους
+                  </h3>
+                  <p class="text-sm">
+                     Τα δεδομένα που συλλέγουμε και επεξεργαζόμαστε δεν
+                     κοινοποιούνται σε τρίτα μέρη, εκτός εάν μας έχετε δώσει
+                     ρητά την άδεια να το πράξουμε. Τα προσωπικά στοιχεία που
+                     συμπληρώσατε στη φόρμα επικοινωνίας δεν θα σταλούν ποτέ σε
+                     τρίτους εκτός εάν έχετε δώσει τη ρητή άδειά σας για
+                     Μπορείτε να ανακαλέσετε την άδειά σας ανά πάσα στιγμή.
+                     Μπορείτε να το κάνετε αυτό επικοινωνώντας μαζί μας. Στη
+                     Δήλωση Cookie, θα βρείτε μια λίστα με τους συνεργάτες με
+                     τους οποίους μοιραζόμαστε τα αποπροσωποποιημένα αναλυτικά
+                     και λειτουργικά cookies και, μόνο με την άδειά σας, τα
+                     δεδομένα που χρησιμοποιούνται για σκοπούς μάρκετινγκ και
+                     κοινωνικών μέσων. Τέλος, το scratchguardspray.com μπορεί να
+                     παρέχει τις προσωπικές σας πληροφορίες σε τρίτους όταν
+                     είμαστε υποχρεωμένοι να το πράξουμε βάσει νόμων και
+                     κανονισμών ή εάν αναγκαστούμε να το πράξουμε λόγω αγωγής
+                     ή/και σε περίπτωση που το κρίνουμε απαραίτητο για την
+                     προστασία του τα δικά μας δικαιώματα
+                  </p>
+                  <h3 class="font-semibold text-lg"></h3>
+                  <p class="text-sm">
+                     Ο ιστότοπός μας μπορεί να περιέχει υπερσυνδέσμους. Εάν
+                     κάνετε κλικ σε αυτόν τον υπερσύνδεσμο, θα εγκαταλείψετε τον
+                     ιστότοπό μας και θα μεταβείτε στον ιστότοπο μιας άλλης
+                     εταιρείας. Σε αυτό το σημείο, το scratchguardspray.com δεν
+                     έχει καμία επιρροή στις υπηρεσίες που προσφέρονται από τον
+                     εν λόγω ιστότοπο ή στις μεθόδους του ιστότοπου. Αυτοί οι
+                     ιστότοποι έχουν τη δική τους πολιτική απορρήτου που είναι
+                     εντελώς ξεχωριστή από την πολιτική απορρήτου μας. Η
+                     πολιτική απορρήτου μας αναφέρεται μόνο σε δεδομένα που
+                     υποβάλλονται σε επεξεργασία από το scratchguardspray.com.
+                     Ως εκ τούτου, το scratchguardspray.com δεν αποδέχεται καμία
+                     ευθύνη ή υποχρέωση για υπηρεσίες ή/και ιστότοπους τρίτων ή
+                     τις μεθόδους και/ή το περιεχόμενό τους.
+                  </p>
+                  <h3 class="font-semibold text-lg">
+                     Προσωπικές Πληροφορίες που Δεν Συλλέγουμε
+                  </h3>
+                  <p class="text-sm">
+                     Ειδικές κατηγορίες. Δεν συλλέγουμε ευαίσθητες προσωπικές
+                     πληροφορίες για εσάς, οι οποίες περιλαμβάνουν λεπτομέρειες
+                     σχετικά με τη φυλή ή την εθνικότητα σας, τις θρησκευτικές ή
+                     φιλοσοφικές πεποιθήσεις, τη σεξουαλική ζωή, τον σεξουαλικό
+                     προσανατολισμό, τις πολιτικές απόψεις, τη συμμετοχή σε
+                     συνδικάτα, πληροφορίες για την υγεία σας και γενετικές και
+                     βιομετρικές πληροφορίες.
+                  </p>
+               </article>
             </div>
          </div>
       </section>
 
-      <!-- ? Cookies Modal -->
+      <!-- ? About Modal -->
       <section
-         id="cookies-modal"
-         class="bg-[#00000088] font-[Inter] flex items-center justify-center min-h-screen absolute z-50 hidden"
+         id="about-modal"
+         class="bg-[#00000088] font-Montserrat flex items-center justify-center min-h-screen absolute z-50 hidden"
       >
          <div
             class="fixed inset-0 w-full bg-[#00000088] flex items-center justify-center max-h-screen"
@@ -685,22 +1907,100 @@
                <div class="relative flex items-end">
                   <img
                      class="hover:cursor-pointer absolute top-0 right-0 w-7 m-4 rounded-xs"
-                     onclick="clickModal('cookies-modal')"
+                     onclick="clickModal('about-modal')"
                      src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSIjRUZFRkVGIiBkPSJNMTkgM0g1YTIgMiAwIDAgMC0yIDJ2MTRhMiAyIDAgMCAwIDIgMmgxNGEyIDIgMCAwIDAgMi0yVjVhMiAyIDAgMCAwLTItMm0tMy40IDE0TDEyIDEzLjRMOC40IDE3TDcgMTUuNmwzLjYtMy42TDcgOC40TDguNCA3bDMuNiAzLjZMMTUuNiA3TDE3IDguNEwxMy40IDEybDMuNiAzLjZ6Ii8+PC9zdmc+"
                      alt=""
                   />
-                  <div class="bg-primarybg w-full">
+                  <div class="bg-[#FF8425] w-full">
                      <h2
                         class="text-base text-center p-4 font-bold text-white w-full"
                      >
-                        Cookie Policy
+                        Ποιοι Είμαστε
                      </h2>
                   </div>
                </div>
 
                <article
-                  class="overflow-y-auto overflow-x-hidden h-96 p-5 text-xs flex flex-col gap-4"
-               ></article>
+                  class="overflow-y-auto overflow-x-hidden bg-white h-96 p-5 text-xs flex flex-col gap-4"
+               >
+                  <h3 class="font-semibold text-lg">ΠΕΡΙ ΠΡΟΩΘΗΣΗΣ ΑΓΑΘΩΝ</h3>
+                  <p class="text-sm">
+                     Αυτός ο ιστότοπος είναι ένας χώρος αγορών. Ο ιδιοκτήτης
+                     έχει ουσιαστική οικονομική σχέση με τον πάροχο των αγαθών
+                     που αναφέρονται στον ιστότοπο, δεδομένου ότι λαμβάνει
+                     αποζημίωση για τα κλικ στη διαφήμιση ή για τις πωλήσεις των
+                     προϊόντων. Δεν είμαστε υπεύθυνοι για τις επιστροφές
+                     προϊόντων, την υποστήριξη που σχετίζεται με το προϊόν και
+                     την αποστολή προϊόντων. Εάν δεν είστε απόλυτα
+                     ευχαριστημένοι με τα αγαθά που λάβατε, επικοινωνήστε
+                     απευθείας με τον πάροχο. Μπορείτε να βρείτε περισσότερες
+                     πληροφορίες σχετικά με τους παρόχους των προϊόντων μέσω της
+                     Πολιτικής Απορρήτου ή της Σελίδας Επικοινωνίας μας. .
+                  </p>
+                  <h3 class="font-semibold text-lg">Ποιοι Είμαστε;</h3>
+                  <p class="text-sm">
+                     Αυτός ο ιστότοπος ανήκει και λειτουργεί από μια ομάδα
+                     επαγγελματιών με αποστολή να βοηθήσει τους αναγνώστες να
+                     λαμβάνουν τεκμηριωμένες αποφάσεις αγοράς παρουσιάζοντας τις
+                     απόψεις μας για επιλεγμένα προϊόντα και επιχειρήσεις.
+                     <br /><br />
+                     Έχοντας αρκετά χρόνια εμπειρίας στον κλάδο της τεχνολογίας,
+                     είμαστε περήφανοι που φτάσαμε σε ένα σημείο να
+                     αποτελούμαστε από μια ομάδα ειδικών, οι οποίοι είναι
+                     γνώστες των αντίστοιχων πεδίων τους και με μεγάλη εξουσία
+                     στις συστάσεις τους.
+                  </p>
+
+                  <h3 class="font-semibold text-lg">Οι Βασικές Αξίες μας</h3>
+                  <p class="text-sm">
+                     Όντας στον κλάδο του ηλεκτρονικού εμπορίου, η εις βάθος
+                     έρευνα προϊόντων και οι έξυπνες διαδικτυακές επιλογές είναι
+                     ενσωματωμένες στη φύση μας. Γνωρίζουμε ότι η επιλογή του
+                     κατάλληλου προϊόντος για τις ανάγκες σας μπορεί να είναι
+                     πραγματικά δύσκολη υπόθεση. Και είμαστε σίγουροι ότι
+                     μοιράζεστε αυτό το πάθος να κάνετε τη σωστή επιλογή μαζί
+                     μας. Χιλιάδες αναγνώστες μας επισκέπτονται καθημερινά για
+                     να ανακαλύψουν το καλύτερο προϊόν για τις ανάγκες τους και
+                     παίρνουμε πολύ σοβαρά τη δουλειά μας για να τους
+                     προσφέρουμε αυτό που χρειάζονται. <br /><br />
+
+                     Συμπερασματικά, παρόλο που είναι δουλειά μας να δοκιμάσουμε
+                     επιλεγμένα προϊόντα και να παρέχουμε τη γνώμη μας για αυτά,
+                     είμαστε ακριβώς όπως εσείς. Μας αρέσει να ακολουθούμε τις
+                     τάσεις της τεχνολογίας, είμαστε γονείς, αγαπάμε τα gadgets,
+                     είμαστε ιδιοκτήτες κατοικίδιων ζώων και έχουμε πάθος να
+                     κάνουμε τη ζωή μας πιο εύκολη μέσω μιας έξυπνης αγοράς.
+                     <br /><br />
+                     Αυτό σημαίνει ότι παρά τη νομισματική σχέση μεταξύ του
+                     scratchguardspray.com και του παρόχου(ων) των προϊόντων που
+                     αναφέρονται σε αυτόν τον ιστότοπο, καταβάλλουμε κάθε δυνατή
+                     προσπάθεια για να παρέχουμε αμερόληπτες και ειλικρινείς
+                     απόψεις στους αναγνώστες μας. Εξάλλου, δεν θα διαφημίζαμε
+                     ένα προϊόν που δεν θα αγοράζαμε ποτέ μόνοι μας.
+                  </p>
+
+                  <h3 class="font-semibold text-lg">
+                     Έχετε κάποια ερώτηση σχετικά με τον ιστότοπό μας;
+                  </h3>
+                  <p class="text-sm">
+                     Εάν έχετε κάποια ερώτηση σχετικά με τη λειτουργία του
+                     scratchguardspray.com, γράψτε μας στο
+                     contact@scratchguardspray.com. <br /><br />
+                     Εργαζόμαστε σκληρά για να καλύψουμε όλα τα μηνύματα των
+                     επισκεπτών μας και θα επικοινωνήσουμε μαζί σας το
+                     συντομότερο δυνατό.
+                  </p>
+                  <h3 class="font-semibold text-lg">
+                     Έχετε κάποια ερώτηση σχετικά με τα προϊόντα που αναφέρονται
+                     στον ιστότοπό μας;
+                  </h3>
+                  <p class="text-sm">
+                     Εάν έχετε απορίες σχετικά με τα προϊόντα που αναφέρονται σε
+                     αυτόν τον ιστότοπο, επικοινωνήστε απευθείας με τον
+                     προμηθευτή του προϊόντος. Μπορείτε να βρείτε περισσότερες
+                     πληροφορίες στη σελίδα επικοινωνίας μας.
+                  </p>
+               </article>
             </div>
          </div>
       </section>
@@ -708,7 +2008,7 @@
       <!-- ? Contact Modal -->
       <section
          id="contact-modal"
-         class="bg-[#00000088] font-[Inter] flex items-center justify-center min-h-screen absolute z-50 hidden"
+         class="bg-[#00000088] font-Montserrat flex items-center justify-center min-h-screen absolute z-50 hidden"
       >
          <div
             class="fixed inset-0 w-full bg-[#00000088] flex items-center justify-center max-h-screen"
@@ -723,18 +2023,50 @@
                      src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSIjRUZFRkVGIiBkPSJNMTkgM0g1YTIgMiAwIDAgMC0yIDJ2MTRhMiAyIDAgMCAwIDIgMmgxNGEyIDIgMCAwIDAgMi0yVjVhMiAyIDAgMCAwLTItMm0tMy40IDE0TDEyIDEzLjRMOC40IDE3TDcgMTUuNmwzLjYtMy42TDcgOC40TDguNCA3bDMuNiAzLjZMMTUuNiA3TDE3IDguNEwxMy40IDEybDMuNiAzLjZ6Ii8+PC9zdmc+"
                      alt=""
                   />
-                  <div class="bg-primarybg w-full">
+                  <div class="bg-[#FF8425] w-full">
                      <h2
                         class="text-base text-center p-4 font-bold text-white w-full"
                      >
-                        Contact
+                        Επικοινωνία
                      </h2>
                   </div>
                </div>
 
                <article
-                  class="overflow-y-auto overflow-x-hidden h-96 p-5 text-xs flex flex-col gap-4"
-               ></article>
+                  class="overflow-y-auto overflow-x-hidden bg-white h-96 p-5 text-xs flex flex-col gap-4"
+               >
+                  <h3 class="font-semibold text-lg">
+                     Χρειάζεστε βοήθεια σχετικά με το scratchguardspray.com?
+                  </h3>
+                  <p class="text-sm">
+                     Σε περίπτωση που θέλετε να λάβετε περισσότερες πληροφορίες
+                     σχετικά με τις κριτικές προϊόντων μας και τη λειτουργία
+                     αυτής της ιστοσελίδας, οι ειδικοί μας στην εξυπηρέτηση
+                     πελατών είναι εδώ για να σας βοηθήσουν! Απλώς στείλτε μας
+                     ένα μήνυμα στο contact@scratchguardspray.com και η ομάδα
+                     μας θα επικοινωνήσει μαζί σας το συντομότερο δυνατό.
+                  </p>
+                  <h3 class="font-semibold text-lg">
+                     Χρειάζεστε βοήθεια σχετικά με ένα προϊόν που αναφέρεται στο
+                     scratchguardspray.com?
+                  </h3>
+                  <p class="text-sm">
+                     Όπως αναφέρθηκε, αυτός ο ιστότοπος είναι ένας χώρος αγορών.
+                     Ο ιδιοκτήτης έχει ουσιαστική οικονομική σχέση με τον πάροχο
+                     των αγαθών που αναφέρονται στον ιστότοπο, καθώς λαμβάνει
+                     αποζημίωση για κλικ στη διαφήμιση ή για πωλήσεις του
+                     προϊόντος. Δεν είμαστε υπεύθυνοι για τις επιστροφές
+                     προϊόντων, την υποστήριξη που σχετίζεται με το προϊόν ή την
+                     αποστολή. Εάν δεν είστε απόλυτα ευχαριστημένοι με τα αγαθά
+                     που λάβατε, επικοινωνήστε απευθείας με τον πάροχο των
+                     αγαθών. <br />
+                     <br />
+                     Είτε έχετε κάποια ερώτηση σχετικά με το προϊόν(τα), τους
+                     κατασκευαστές, την τιμολόγηση ή οτιδήποτε άλλο,
+                     επικοινωνήστε με τη σελίδα του παρόχου για να λάβετε
+                     περισσότερες πληροφορίες.
+                  </p>
+               </article>
             </div>
          </div>
       </section>
