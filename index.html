@@ -42,6 +42,7 @@
          href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
          rel="stylesheet"
       />
+      <script defer src="scripts/cards-logic.js"></script>
    </head>
    <body>
       <!-- ? navbar mobile -->
@@ -72,7 +73,7 @@
 
       <main class="py-8">
          <!-- ? Hero section -->
-         <section id="home" class="flex justify-center tab-content">
+         <section id="home" class="flex flex-col items-center tab-content">
             <div
                class="flex gap-5 sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:[1280px] 2xl:w-[1300px] px-3"
             >
@@ -1127,6 +1128,7 @@
                                     />
                                  </div>
                                  <div
+                                    id="1x"
                                     class="w-[75%] flex items-center justify-center px-12 h-full md:w-full"
                                  >
                                     <h3
@@ -1158,7 +1160,7 @@
                               </div>
 
                               <div
-                                 class="bg-[#FF8425] flex font-bold text-white justify-center items-center w-full rounded-b-xl h-[25%]"
+                                 class="bg-[#FF8425] cursor-pointer flex font-bold text-white justify-center items-center w-full rounded-b-xl h-[25%]"
                               >
                                  ΑΓΟΡΑΣΕ ΕΔΩ
                               </div>
@@ -1184,6 +1186,7 @@
                                     />
                                  </div>
                                  <div
+                                    id="2x"
                                     class="w-[75%] flex items-center justify-center px-12 h-full md:w-full"
                                  >
                                     <h3
@@ -1209,13 +1212,13 @@
                                     </p>
 
                                     <p class="text-base font-bold">
-                                       *5€ Μεταφορικά
+                                       *Δωρεάν Μεταφορικά
                                     </p>
                                  </div>
                               </div>
 
                               <div
-                                 class="bg-[#FF8425] flex font-bold text-white justify-center items-center w-full rounded-b-xl h-[25%]"
+                                 class="bg-[#FF8425] cursor-pointer flex font-bold text-white justify-center items-center w-full rounded-b-xl h-[25%]"
                               >
                                  ΑΓΟΡΑΣΕ ΕΔΩ
                               </div>
@@ -1243,6 +1246,7 @@
                                     />
                                  </div>
                                  <div
+                                    id="3x"
                                     class="w-[75%] flex items-center justify-center px-12 h-full md:w-full"
                                  >
                                     <h3
@@ -1268,13 +1272,13 @@
                                     </p>
 
                                     <p class="text-base font-bold">
-                                       *5€ Μεταφορικά
+                                       *Δωρεάν Μεταφορικά
                                     </p>
                                  </div>
                               </div>
 
                               <div
-                                 class="bg-[#FF8425] flex font-bold text-white justify-center items-center w-full rounded-b-xl h-[25%]"
+                                 class="bg-[#FF8425] cursor-pointer flex font-bold text-white justify-center items-center w-full rounded-b-xl h-[25%]"
                               >
                                  ΑΓΟΡΑΣΕ ΕΔΩ
                               </div>
@@ -1312,9 +1316,9 @@
                               class="rounded-lg p-2 font-bold w-full"
                               name="package"
                            >
-                              <option value="">1 ScratchGuard Spray</option>
-                              <option value="">2 ScratchGuard Spray</option>
-                              <option value="">3 ScratchGuard Spray</option>
+                              <option value="op-1">1 ScratchGuard Spray</option>
+                              <option value="op-2">2 ScratchGuard Spray</option>
+                              <option value="op-3">3 ScratchGuard Spray</option>
                            </select>
 
                            <input
